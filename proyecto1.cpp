@@ -27,3 +27,4 @@ void registro_pago()
 {
 	cout << "REGISTRO DE PAGO" << endl;
 }
+//se debe de trabajar con git hub y git
