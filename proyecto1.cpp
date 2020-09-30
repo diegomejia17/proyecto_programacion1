@@ -1,7 +1,8 @@
 #include<iostream>
 #include<string.h>
 #include<ctype.h>
-
+ 
+using namespace std;
 void registro_pago();
 int main()
     {
@@ -12,5 +13,5 @@ int main()
 
 void registro_pago()
 {
-
+	cout << "REGISTRO DE PAGO" << endl;
 }
