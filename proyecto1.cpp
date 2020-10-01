@@ -56,7 +56,7 @@ void Registros()
             do{
                 switch(opccion)
                     case 1: {
-//yo estoy trabajando
+//yo estoy trabajando----------------------------------------
                            }break;
                     case 2: {
                             }break;
