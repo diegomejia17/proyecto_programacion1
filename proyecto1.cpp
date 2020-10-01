@@ -46,7 +46,7 @@ int main()
 ingresar()
 =======
 void Registros()
->>>>>>> d167099723b32cb01d092b4b639f48f8d5fa5794
+
     {
         cout<<"Registros"<<endl;
         cout<<"1: Nueva cuenta"<<endl;
