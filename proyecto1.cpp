@@ -6,9 +6,6 @@ using namespace std;
 void registro_pago();
 
 void Registros();
-
-
->>>>>>> d167099723b32cb01d092b4b639f48f8d5fa5794
 int main()
     {
         int opccion, Opc_Registro;
