@@ -42,9 +42,9 @@ int main()
         cin.get();
     }
 
-<<<<<<< HEAD
+
 ingresar()
-=======
+
 void Registros()
 
     {
@@ -56,6 +56,7 @@ void Registros()
             do{
                 switch(opccion)
                     case 1: {
+//yo estoy trabajando
                            }break;
                     case 2: {
                             }break;
@@ -66,16 +67,10 @@ void Registros()
 
                     }while(Opc_Registro > 0);
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> d167099723b32cb01d092b4b639f48f8d5fa5794
 
 void registro_pago()
 {
 	cout << "REGISTRO DE PAGO" << endl;
 }
-<<<<<<< HEAD
-//se debe de trabajar con git hub y git
-=======
->>>>>>> d167099723b32cb01d092b4b639f48f8d5fa5794
+
