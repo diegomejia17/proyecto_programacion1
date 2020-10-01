@@ -4,8 +4,7 @@
 
 using namespace std;
 void registro_pago();
-<<<<<<< HEAD
-=======
+
 void Registros();
 
 
