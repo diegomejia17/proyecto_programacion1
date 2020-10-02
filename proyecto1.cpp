@@ -8,7 +8,7 @@ void registro_pago();
 void Registros();
 int main()
     {
-hhhhhhhhhhhhhhhhhhhhhhhhhgg
+
         int opccion, Opc_Registro;
         cout<<"CONTROL DE RECIBO DE AGUA"<<endl;
         cout<<"1: Registro de usuario"<<endl;
