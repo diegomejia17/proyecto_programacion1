@@ -70,7 +70,7 @@ void Registros()
 
 
 void registro_pago()
-{
-	cout << "REGISTRO DE PAGO" << endl;
-}
+        {
+                cout << "REGISTRO DE PAGO" << endl;
+        }
 
