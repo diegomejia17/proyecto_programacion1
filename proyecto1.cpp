@@ -3,12 +3,13 @@
 #include<conio.h>
 #include<string.h>
 #include<windows.h>
-///hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+#pragma warning(disable : 4996)
 using namespace std;
 
 const int N = 100;
 
-void Registros(char Nombres[N][100], char Apellidos[N][100],int Dui[N],char Numero_cuent[N][10]);//prototipo de agregar modificar y eliminar los usuarios
+void Registros(char Nombres[N][100], char Apellidos[N][100],int Dui[N],char Numero_cuent[N][10]);
+//prototipo de agregar modificar y eliminar los usuarios
 
 int main()
     {
@@ -31,7 +32,8 @@ int main()
 
                         case 1: 
                                 {
-                                   Registros(Nombres, Apellidos, Dui, Numero_cuenta);//agregar modificar y eliminar los usuarios
+                                   Registros(Nombres, Apellidos, Dui, Numero_cuenta);
+								   //agregar modificar y eliminar los usuarios
                                    system("Cls");
                                 } break;
                         case 2: 
