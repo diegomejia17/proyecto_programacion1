@@ -8,11 +8,11 @@ using namespace std;
 
 const int N = 100;
 
-void Registros(char Nombres[N][100], char Apellidos[N][100],int Dui[N]);
+void Registros(char Nombres[N][100], char Apellidos[N][100],int Dui[N],char Numero_cuent[N][10]);//prototipo de agregar modificar y eliminar los usuarios
 
 int main()
     {
-        char Nombres[N][100] = {"\0"}, Apellidos[N][100] = {"\0"};
+        char Nombres[N][100] = {"\0"}, Apellidos[N][100] = {"\0"}, Numero_cuenta[N][10] = {"\0"};
         int Dui[N];
         int opccion;
         do{
@@ -31,7 +31,7 @@ int main()
 
                         case 1: 
                                 {
-                                   Registros(Nombres, Apellidos, Dui);
+                                   Registros(Nombres, Apellidos, Dui, Numero_cuenta);//agregar modificar y eliminar los usuarios
                                    system("Cls");
                                 } break;
                         case 2: 
@@ -59,7 +59,7 @@ int main()
         getchar();
         cin.get();
     }
-void gotoxy(int x, int y)
+void gotoxy(int x, int y)//para posicionamiento de las impresiones
     {//esta funcion permite el posicionamiento del curso x, y
         HANDLE hcon;
         hcon=GetStdHandle(STD_OUTPUT_HANDLE);
@@ -69,10 +69,11 @@ void gotoxy(int x, int y)
         SetConsoleCursorPosition(hcon,dwPos);
     }
 
-void Registros(char Nombres[N][100], char Apellidos[N][100], int Dui[N])
+void Registros(char Nombres[N][100], char Apellidos[N][100], int Dui[N], char Numero_cuenta[N][10])//funcion para agregar modificar y eliminar los usuarios
 
     { 
-            int i=0, Opc_Registro;
+            int i= 0, Opc_Registro;
+            char aux[N][10] = {"\0"}, anio[N][10] = {"\0"};
             do{
                 cout<<"Registros"<<endl;
                 cout<<"1: Nueva cuenta"<<endl;
@@ -85,18 +86,42 @@ void Registros(char Nombres[N][100], char Apellidos[N][100], int Dui[N])
                         {
                                 case 1: 
                                         {
+                                                //agregar usuarios maximo 100
                                                 fflush(stdin);
                                                 cout<<"Ingresa los nombre"<<endl;
                                                 gets(Nombres[i]);
                                                 cout<<"Ingresa Tus apellidos"<<endl;
                                                 gets(Apellidos[i]);
+                                                cout<<"Ingrese el anio de asociado"<<endl;
+                                                gets(anio[i]);
                                                 cout<<"Ingresa el numero de DUI"<<endl;
                                                 cin>>Dui[i];
+                                                
                                                 system("Cls");
+
+                                                //numero correlativo
+                                                do{
+                                                        strcpy(Numero_cuenta[i],anio[i]);
+                                                        strcat(Numero_cuenta[i],"-");
+                                                        if((strlen(Numero_cuenta[i])+i)==8-i)
+                                                                {
+                                                                        strcat(Numero_cuenta[i],"0");  
+                                                                }else
+                                                                        {
+                                                                                //ito(i,aux[i],10);
+                                                                                strcat(Numero_cuenta[i],"7");
+                                                                        }
+                                                                
+                                                }while(strlen(Numero_cuenta[i])==8);
+                                                
+                                                
+                                                
                                                 i++;
+
                                         }break;
                                 case 2: 
                                         {
+                                                //muestra de usuario
                                                 gotoxy(0,0);
                                                 cout<<"N de usuario";
                                                 gotoxy(25,0);
@@ -108,12 +133,12 @@ void Registros(char Nombres[N][100], char Apellidos[N][100], int Dui[N])
                                                 gotoxy(100,0);
                                                 cout<<"Dui"<<endl;
                                                 cout<<"\n";
-                                                for(int j = 0; j <= i; j++)
+                                                for(int j = 0; j < i; j++)
                                                         {
                                                                 gotoxy(0,j+1);
                                                                 cout<<j;
                                                                 gotoxy(25,j+1);
-                                                                cout<<"Numero co";
+                                                                cout<<Numero_cuenta[j];
                                                                 gotoxy(50,j+1);
                                                                 cout<<Nombres[j];
                                                                 gotoxy(75,j+1);
@@ -124,9 +149,11 @@ void Registros(char Nombres[N][100], char Apellidos[N][100], int Dui[N])
                                                         }
                                                         system("pause>null");
                                                         system("Cls");
+                                        //editar cuenta
                                         }break;
                                 case 3:
                                         {
+                                        //eliminar cuenta
 
                                         }break;
                                 default :
