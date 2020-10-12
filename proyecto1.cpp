@@ -3,6 +3,7 @@
 #include<conio.h>
 #include<string.h>
 #include<windows.h>
+#include "registro_recibos.cpp"
 
 #pragma warning(disable : 4996)
 using namespace std;
