@@ -3,21 +3,26 @@
 #include<conio.h>
 #include<string.h>
 #include<windows.h>
-#include "registro_recibos.cpp"
 
-#pragma warning(disable : 4996)
+
+
 using namespace std;
 const int N = 100;
-
-void registro_resibos();//esta funcion es el prototipo de el registro de recibos
+//funciones de Francisco Ayala
 void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100],int Dui[N],char Numero_cuent[N][10], char anio[N][10], int i);//prototipo de agregar modificar y eliminar los usuarios
 void Numero_correlativo( char Numero_cuenta[N][10], char anio[N][10], int i);//CREAR NUMERO DE CUENTA
 void Guardar(char Nombres[N][100], char Apellidos[N][100], int Dui[N], char Numero_cuenta[N][10], char anio[N][10], int i);//PROTOTIPO PARA LA FUNCION GUARDAR UN NUEVO USUARIO
 void Editar(char Nombres[N][100], char Apellidos[N][100], int Dui[N], char Numero_cuenta[N][10], char anio[N][10], int i);//EDITAR UN USUARIO
 
+//funciones de Diego Mejia
+void registro_resibos();//esta funcion es el prototipo de el registro de recibos
+void menu_registo_recibos(); //muestra el sub menu de opciones del registro de recibos
+
+
 int main()
     {
-        char Nombres[N][100] = {"\0"}, Apellidos[N][100] = {"\0"}, Numero_cuenta[N][10] = {"\0"}, anio[N][10] = {"\0"};
+        char Nombres[N][100] = {"\0"}, Apellidos[N][100] = {"\0"};
+        char  Numero_cuenta[N][10] = {"\0"}, anio[N][10] = {"\0"};
         int Dui[N], i= 0;
         int opccion;
 
@@ -65,6 +70,22 @@ int main()
         getchar();
         cin.get();
     }
+//Funciones de Diego Mejia
+void menu_registo_recibos()
+{
+        cout <<"seleccione lo que desea hacer "<<endl;
+        cout <<"1- agregar consumo de agua del cliente "<<
+}
+void registro_resibos()
+{
+        char c_usuario[10]={'\0'};
+        cout << "ingrese el numero de cuenta del usuario al que desea agregar consumo de agua"<<endl;
+        cin>>c_usuario;
+        
+
+}
+
+//funciones de Javier Ayala
 void gotoxy(int x, int y)//para posicionamiento de las impresiones
     {//esta funcion permite el posicionamiento del curso x, y
         HANDLE hcon;
