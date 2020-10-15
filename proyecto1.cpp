@@ -9,11 +9,12 @@
 using namespace std;
 const int N = 100;
 //funciones de Francisco Ayala
-void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100],int Dui[N],char Numero_cuent[N][10], char anio[N][10], int i);//prototipo de agregar modificar y eliminar los usuarios
+void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100],char Dui[N][11],char Numero_cuent[N][10], char anio[N][11], int i);//prototipo de agregar modificar y eliminar los usuarios
 void Numero_correlativo( char Numero_cuenta[N][10], char anio[N][10], int i);//CREAR NUMERO DE CUENTA
-void Guardar(char Nombres[N][100], char Apellidos[N][100], int Dui[N], char Numero_cuenta[N][10], char anio[N][10], int i);//PROTOTIPO PARA LA FUNCION GUARDAR UN NUEVO USUARIO
-void Editar(char Nombres[N][100], char Apellidos[N][100], int Dui[N], char Numero_cuenta[N][10], char anio[N][10], int i);//EDITAR UN USUARIO
-
+void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][10], int i);//PROTOTIPO PARA LA FUNCION GUARDAR UN NUEVO USUARIO
+void Editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][10], int i);//EDITAR UN USUARIO
+int ValidarLetras(char [N][100], int i);
+int ValidarNumeros(char [N][11], int i);
 //funciones de Diego Mejia
 void registro_resibos();//esta funcion es el prototipo de el registro de recibos
 void menu_registo_recibos(); //muestra el sub menu de opciones del registro de recibos
@@ -22,8 +23,8 @@ void menu_registo_recibos(); //muestra el sub menu de opciones del registro de r
 int main()
     {
         char Nombres[N][100] = {"\0"}, Apellidos[N][100] = {"\0"};
-        char  Numero_cuenta[N][10] = {"\0"}, anio[N][10] = {"\0"};
-        int Dui[N], i= 0;
+        char  Numero_cuenta[N][10] = {"\0"}, anio[N][11] = {"\0"}, Dui[N][11] = {"\0"};
+        int  i= 0;
         int opccion;
 
         do{
@@ -74,7 +75,7 @@ int main()
 void menu_registo_recibos()
 {
         cout <<"seleccione lo que desea hacer "<<endl;
-        cout <<"1- agregar consumo de agua del cliente "<<
+        cout <<"1- agregar consumo de agua del cliente ";
 }
 void registro_resibos()
 {
@@ -86,6 +87,7 @@ void registro_resibos()
 }
 
 //funciones de Javier Ayala
+/*---------------------------------------FUNCION PARA POCICIONAR IMPRESION---------------------------------------------*/
 void gotoxy(int x, int y)//para posicionamiento de las impresiones
     {//esta funcion permite el posicionamiento del curso x, y
         HANDLE hcon;
@@ -95,8 +97,42 @@ void gotoxy(int x, int y)//para posicionamiento de las impresiones
         dwPos.Y=y;
         SetConsoleCursorPosition(hcon,dwPos);
     }
+/*---------------------------------------FUNCION PARA VALIDAR LETRA---------------------------------------------*/
+int ValidarLetras(char Ca[N][100], int i)      
+        {
+                int j = 0;
+                char c;
+                for (j = 0; j < strlen(Ca[i]); j++)//Numero de caracteres
+                        {
+                                c=Ca[i][j];
+                                if(isalpha (c) == 0)//Falso si el caracter no es letra
+                                        {
+                                                if (isspace(c) == 0)//verdadero si tiene espacio
+                                                        {
+                                                                cout<<"El caracter: "<<c<<" no es valido"<<endl;
+                                                                return 0;
+                                                        }
+                                        }
+                        }
+        }
+/*---------------------------------------FUNCION PARA VALIDAR NUMERO---------------------------------------------*/
+int ValidarNumeros(char Nu[N][11], int i)
+        {
+                int j = 0;
+                char c;
+                for (j = 0; j < strlen(Nu[i]); j++)//Numero de caracteres
+                        {
+                                c=Nu[i][j];
+                                if(isdigit (c) == 0)//Falso si el caracter no es letra
+                                        {
+                                                cout<<"El caracter: "<<c<<" no es valido"<<endl;
+                                                return 0;
+                                        }
+                        }
+        }
+
 /*---------------------------------------FUNCION PARA CREAR EL NUMERO CORRELATIVO---------------------------------------------*/
-void Numero_correlativo( char Numero_cuenta[N][10], char anio[N][10], int i)
+void Numero_correlativo( char Numero_cuenta[N][10], char anio[N][11], int i)
         {
                 char corre[N][10] = {"\0"};
                 strncpy(Numero_cuenta[i],anio[i],4);//COPIAR AÑO EN NUMERO DE CUENTA
@@ -114,24 +150,36 @@ void Numero_correlativo( char Numero_cuenta[N][10], char anio[N][10], int i)
                     }while(strlen(Numero_cuenta[i])<=8);//FIN DEL BUCLE
         }
 /*---------------------------------------FUNCION PARA CREAR UN NUEVO USUARIO---------------------------------------------*/
-void Guardar(char Nombres[N][100], char Apellidos[N][100], int Dui[N], char Numero_cuenta[N][10], char anio[N][10], int i)
+void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int i)
         {
                         //agregar usuarios maximo 100
                         fflush(stdin);
-                        cout<<"Ingresa los nombre"<<endl;
-                        gets(Nombres[i]);
-                        cout<<"Ingresa Tus apellidos"<<endl;
-                        gets(Apellidos[i]);
-                        cout<<"Ingrese el anio de asociado"<<endl;
-                        gets(anio[i]);
-                        cout<<"Ingresa el numero de DUI"<<endl;
-                        cin>>Dui[i];
+
+                        do{
+                                cout<<"Ingresa los nombre"<<endl;
+                                gets(Nombres[i]);
+                        }while(ValidarLetras(Nombres, i) == false);
+
+                        do{
+                                cout<<"Ingresa Tus apellidos"<<endl;
+                                gets(Apellidos[i]);
+                        }while(ValidarLetras(Apellidos, i) == false);
+
+                        do{
+                                cout<<"Ingrese el anio de asociado"<<endl;
+                                gets(anio[i]);
+                        }while(ValidarNumeros(anio,i) == false);
+
+                         do{
+                                cout<<"Ingresa el numero de DUI"<<endl;
+                                gets(Dui[i]);
+                        }while(ValidarNumeros(Dui,i) == false);
                         system("Cls");
                         //numero correlativo
                                                                  
         }
 /*---------------------------------------FUNCION PARA EDITAR CUENTA---------------------------------------------*/
-void Editar(char Nombres[N][100], char Apellidos[N][100], int Dui[N], char Numero_cuenta[N][10], char anio[N][10], int i)
+void Editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int i)
         {
                 gotoxy(0,0);
                 cout<<"N de usuario";
@@ -161,7 +209,7 @@ void Editar(char Nombres[N][100], char Apellidos[N][100], int Dui[N], char Numer
                 system("Cls");
         }
 /*---------------------------------------FUNCION MENU DE REGISTROS DE LOS USUARIOS---------------------------------------------*/
-void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], int Dui[N], char Numero_cuenta[N][10], char anio[N][10], int i)//funcion para agregar modificar y eliminar los usuarios
+void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int i)//funcion para agregar modificar y eliminar los usuarios
 
     { 
             int Opc_Registro;
