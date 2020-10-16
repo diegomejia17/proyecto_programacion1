@@ -5,7 +5,6 @@
 #include<windows.h>
 
 
-
 using namespace std;
 const int N = 100;
 //funciones de Francisco Ayala
@@ -15,8 +14,9 @@ void Guardar(char Nombres[N][100], char Apellidos[N][100], int Dui[N], char Nume
 void Editar(char Nombres[N][100], char Apellidos[N][100], int Dui[N], char Numero_cuenta[N][10], char anio[N][10], int i);//EDITAR UN USUARIO
 
 //funciones de Diego Mejia
-void registro_resibos();//esta funcion es el prototipo de el registro de recibos
+void registro_resibos(char[][]);//esta funcion es el prototipo de el registro de recibos
 void menu_registo_recibos(); //muestra el sub menu de opciones del registro de recibos
+void verificar_registro_recibos(char[],char[]);//verifica que el valor ingresado coincida con algun registro 
 
 
 int main()
@@ -51,7 +51,7 @@ int main()
                                 }break;
                         case 3:
                                 {
-									registro_resibos();
+									registro_resibos(Numero_cuenta);
                                 }break;
                         case 4:
                                 {
@@ -71,12 +71,16 @@ int main()
         cin.get();
     }
 //Funciones de Diego Mejia
+void verificar_registo_resibos()
+{
+
+}
 void menu_registo_recibos()
 {
         cout <<"seleccione lo que desea hacer "<<endl;
         cout <<"1- agregar consumo de agua del cliente "<<
 }
-void registro_resibos()
+void registro_resibos(char menu_registro[][])
 {
         char c_usuario[10]={'\0'};
         cout << "ingrese el numero de cuenta del usuario al que desea agregar consumo de agua"<<endl;
