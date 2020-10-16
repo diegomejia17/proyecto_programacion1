@@ -1,4 +1,5 @@
- const  int A = 100;
+#include <string.h>
+const  int A = 100;
 using namespace std;
 
 /*---------------------------------------FUNCION PARA VALIDAR LETRA---------------------------------------------*/

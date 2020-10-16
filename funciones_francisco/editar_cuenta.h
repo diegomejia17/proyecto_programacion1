@@ -1,4 +1,6 @@
- const  int E = 100;
+#include <windows.h>
+#include "gotoxy.h"
+const  int E = 100;
 using namespace std;
 /*---------------------------------------FUNCION PARA EDITAR CUENTA---------------------------------------------*/
 void Editar(char Nombres[E][100], char Apellidos[E][100], char Dui[E][11], char Numero_cuenta[E][10], char anio[E][11], int i)

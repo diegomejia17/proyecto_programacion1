@@ -3,12 +3,8 @@
 #include<conio.h>
 #include<string.h>
 #include<windows.h>
-#include "funciones_francisco/gotoxy.h"
+//#include "funciones_francisco/gotoxy.h"
 #include "funciones_francisco/menu_registro_usuario.h"
-
-
-
-
 
 using namespace std;
 
@@ -63,11 +59,5 @@ int main()
         getchar();
         cin.get();
     }
-//Funciones de Diego Mejia
-
-
-//funciones de Javier Ayala
-
-
 
 
