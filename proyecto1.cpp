@@ -61,3 +61,50 @@ int main()
     }
 
 
+
+//Funciones de Diego Mejia
+bool verificar_registo_resibos(char numero_cuenta[N][10], char c_ingresada[10], int& posicion)
+{
+	int a;//variables controladoras de los ciclos
+	for ( a = 0; a < N; a++)
+	{
+		if (numero_cuenta[a] == c_ingresada)//condicional que regula el acceso al menu de registro recibos
+		{
+			posicion = a;
+			return true; //si se cumple la condicion retornara verdadero.
+		}
+	}
+	return false; //si el condicional no se cumple durante todo el for, retornara falso
+}
+void menu_registo_recibos(int posicion, char c_usuario[10])
+{
+	cout << "seleccione lo que desea hacer " << endl;
+	cout << "1- agregar consumo de agua del cliente " << endl;
+	cout << "2- modificar el consumo del cliente " << endl;
+
+}
+void registro_resibos(char menu_registro[N][10] )
+{
+	char c_usuario[10] = { '\0' };
+	bool controlador;
+	int posicion;
+	int mes;
+	do
+	{
+		cout << "ingrese el numero de cuenta del usuario al que desea agregar consumo de agua" << endl;
+		cin >> c_usuario;
+		system("cls");
+		cout << "ingrese el mes del que desea generar registro" << endl;
+		cout << "01 -> Enero" << "\n 02 -> Febrero" << "\n 03 -> Marzo" << "\n 04 -> Abril" << endl;
+		cout << "05 -> Mayo" << "\n 06 -> Junio" << "\n 07 -> Julio" << "\n 08 -> Agosto" << endl;
+		cout << "09 -> Septiembre " << "\n 10 -> Octubre " << "\n 11 -> Novienbre " << "\n 12 -> Dieciembre " << endl;
+		cin >> mes;
+		controlador = verificar_registo_resibos(menu_registro, c_usuario,posicion);
+		system("cls");
+	} while (controlador == false);
+
+	menu_registo_recibos(posicion);
+
+
+}
+
