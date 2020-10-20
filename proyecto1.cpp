@@ -3,7 +3,6 @@
 #include<conio.h>
 #include<string.h>
 #include<windows.h>
-//#include "funciones_francisco/gotoxy.h"
 #include "funciones_francisco/menu_registro_usuario.h"
 
 using namespace std;
@@ -14,18 +13,20 @@ int main()
         char  Numero_cuenta[N][10] = {"\0"}, anio[N][11] = {"\0"}, Dui[N][11] = {"\0"};
         int  i= 0;
         int opccion;
+        char opccion1[1];
 
         do{
-        cout<<"CONTROL DE RECIBO DE AGUA"<<endl;
-        cout<<"1: Registro de usuario"<<endl;
-        cout<<"2: Registro de consumo de agua mensual"<<endl;
-        cout<<"3: Registro de pago de recibo de agua"<<endl;
-        cout<<"4: Informe de pago de usuarios"<<endl;
-        cout<<"5: salir"<<endl;
-        cin>>opccion;
-        system("Cls");
-
-        
+                do{
+                        cout<<"CONTROL DE RECIBO DE AGUA"<<endl;
+                        cout<<"1: Registro de usuario"<<endl;
+                        cout<<"2: Registro de consumo de agua mensual"<<endl;
+                        cout<<"3: Registro de pago de recibo de agua"<<endl;
+                        cout<<"4: Informe de pago de usuarios"<<endl;
+                        cout<<"5: salir"<<endl;
+                        gets(opccion1);
+                        system("Cls");
+                }while(Validarmenu(opccion1) == false);//reciba solo numeros
+                opccion = atoi(opccion1);//pasar de char a int
             switch(opccion)
                 {
 

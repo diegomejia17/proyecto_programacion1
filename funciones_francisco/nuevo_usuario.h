@@ -1,5 +1,7 @@
 #include<iostream>
- const  int B = 100;
+
+const  int B = 100;
+
 #include "validar_letras.h"
 #include "validar_numeros.h"
 #include "ortografia.h"
