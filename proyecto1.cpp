@@ -48,11 +48,11 @@ int main()
                                 }break;
                         default:
                                 {
-
+                                    cout<<"Vuelva pronto!!"<<endl;    
                                 }break;
 
                 }        
-            }while(opccion > 0);
+            }while(opccion != 5);
             
 
 
@@ -103,7 +103,7 @@ void registro_resibos(char menu_registro[N][10] )
 		system("cls");
 	} while (controlador == false);
 
-	menu_registo_recibos(posicion);
+	//menu_registo_recibos(posicion);
 
 
 }

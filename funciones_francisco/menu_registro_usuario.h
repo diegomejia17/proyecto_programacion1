@@ -1,7 +1,9 @@
+#include<string.h>
 #include "nuevo_usuario.h"
 #include "numero_correlativo.h"
 #include "editar_cuenta.h"
 #include "ordenamiento.h"
+#include "validarmenu.h"
 extern const  int N = 100;
 using namespace std;
 /*---------------------------------------FUNCION MENU DE REGISTROS DE LOS USUARIOS---------------------------------------------*/
@@ -10,14 +12,18 @@ void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char 
     { 
             //AGREGAR ORDENAMIENTO Y VALIDAR EL Opc_Registro JAVIER
             int Opc_Registro;
+            char Opc[11];
             do{
-                cout<<"Registros"<<endl;
-                cout<<"1: Nueva cuenta"<<endl;
-                cout<<"2: Editar cuenta"<<endl;
-                cout<<"3: Eliminar cuenta"<<endl;
-                cout<<"4: Menu principal"<<endl;
-                cin>>Opc_Registro;
-                system("Cls");
+                do{
+                        cout<<"Registros"<<endl;
+                        cout<<"1: Nueva cuenta"<<endl;
+                        cout<<"2: Editar cuenta"<<endl;
+                        cout<<"3: Eliminar cuenta"<<endl;
+                        cout<<"4: Menu principal"<<endl;
+                        gets(Opc);
+                        system("Cls");
+                }while(Validarmenu(Opc) == false);//reciba solo numeros
+                Opc_Registro = atoi(Opc);//pasar de char a int
                 switch(Opc_Registro)
                         {
                                 case 1: 
