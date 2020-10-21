@@ -1,6 +1,6 @@
 #include <string.h>
 #include <ctype.h>
-#include<string.h>
+
 const int I = 100;
 void Ortografia(char texto[I][100],int i)
     {

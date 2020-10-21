@@ -20,7 +20,7 @@ void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char 
                         cout<<"4: Menu principal"<<endl;
                         gets(Opc);
                         system("Cls");
-                }while(Validarmenu(Opc) == false);//reciba solo numeros
+                }while(Validarmenu(Opc,1) == false);//reciba solo numeros
                 Opc_Registro = atoi(Opc);//pasar de char a int
                 switch(Opc_Registro)
                         {

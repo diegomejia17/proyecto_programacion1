@@ -3,12 +3,15 @@
 #include <iostream>
 using namespace std;
 /*---------------------------------------FUNCION PARA VALIDAR NUMERO---------------------------------------------*/
-int Validarmenu(char Nu[1])
+int Validarmenu(char Nu[1],int tamanio)//a la funcion se le debe pasar el array que contiene el numero, y el numero de posiciones que se debe evaluar
         {
                 char c ;
-                                c=Nu[0];
-                                if(isdigit (c) == 0)//Falso si el caracter no es letra
-                                        {
-                                                return 0;
-                                        }
+                for (int  i = 0; i < tamanio; i++)
+                {
+                        c=Nu[i];
+                        if(isdigit (c) == 0)//Falso si el caracter no es letra
+                                {
+                                        return 0;
+                                }    
+                }
         }
