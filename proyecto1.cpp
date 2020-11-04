@@ -3,8 +3,9 @@
 #include<conio.h>
 #include<string.h>
 #include<windows.h>
-#include "funciones_francisco/menu_registro_usuario.h"
-#include "funciones_diego/registro_recibo.h"
+#include "funciones_francisco/menu_registro_usuario.cpp"
+#include "funciones_diego/registro_recibo.cpp"
+#include "constante.h"
 
 using namespace std;
 
@@ -26,7 +27,7 @@ int main()
                         cout<<"5: salir"<<endl;
                         gets(opccion1);
                         system("Cls");
-                }while(Validarmenu(opccion1) == false);//reciba solo numeros
+                }while(Validarmenu(opccion1,1) == false);//reciba solo numeros
                 opccion = atoi(opccion1);//pasar de char a int
             switch(opccion)
                 {

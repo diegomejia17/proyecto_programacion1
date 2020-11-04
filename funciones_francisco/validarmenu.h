@@ -1,17 +1,5 @@
-
-#include <string.h>
-#include <iostream>
-using namespace std;
-/*---------------------------------------FUNCION PARA VALIDAR NUMERO---------------------------------------------*/
-int Validarmenu(char Nu[1],int tamanio)//a la funcion se le debe pasar el array que contiene el numero, y el numero de posiciones que se debe evaluar
-        {
-                char c ;
-                for (int  i = 0; i < tamanio; i++)
-                {
-                        c=Nu[i];
-                        if(isdigit (c) == 0)//Falso si el caracter no es letra
-                                {
-                                        return 0;
-                                }    
-                }
-        }
+#ifndef __validar_menu_h
+#define __validar_menu_h
+#include "../constante.h"
+ bool  Validarmenu (char *Nu, int tamanio)
+#endif
