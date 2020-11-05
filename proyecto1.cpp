@@ -1,6 +1,5 @@
 #include<iostream>
 #include<stdlib.h>
-#include<conio.h>
 #include<string.h>
 #include<windows.h>
 #include "funciones_francisco/menu_registro_usuario.cpp"
@@ -16,6 +15,7 @@ int main()
         int  i= 0;
         int opccion;
         char opccion1[1];
+        char registro_r[2][N];
 
         do{
                 do{
