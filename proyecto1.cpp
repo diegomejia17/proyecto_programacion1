@@ -4,7 +4,9 @@
 #include<string.h>
 #include<windows.h>
 #include "funciones_francisco/menu_registro_usuario.h"
+#include "validar2menu.h"
 #include "funciones_diego/registro_recibo.h"
+//#include "../funciones_francisco/menu_registro_recibo.cpp"
 
 using namespace std;
 
@@ -24,9 +26,9 @@ int main()
                         cout<<"3: Registro de pago de recibo de agua"<<endl;
                         cout<<"4: Informe de pago de usuarios"<<endl;
                         cout<<"5: salir"<<endl;
-                        gets(opccion1);
+                        cin>>opccion1;
                         system("Cls");
-                }while(Validarmenu(opccion1) == false);//reciba solo numeros
+                }while(Validarmenu2(opccion1) == false);//reciba solo numeros
                 opccion = atoi(opccion1);//pasar de char a int
             switch(opccion)
                 {

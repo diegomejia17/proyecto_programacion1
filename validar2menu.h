@@ -1,9 +1,8 @@
-
 #include <string.h>
 #include <iostream>
 using namespace std;
 /*---------------------------------------FUNCION PARA VALIDAR NUMERO---------------------------------------------*/
-int Validarmenu(char Nu[2])//a la funcion se le debe pasar el array que contiene el numero, y el numero de posiciones que se debe evaluar
+int Validarmenu2(char Nu[2])//a la funcion se le debe pasar el array que contiene el numero, y el numero de posiciones que se debe evaluar
         {
                 char c ;
                 for (int  i = 0; i < 1; i++)

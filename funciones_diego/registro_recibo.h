@@ -1,6 +1,6 @@
-#include "funciones_francisco/validarmenu.h"
 #include "validar_correlativo.h"
 #include "menu_registro_recibo.h"
+#include "validamenu1.h"
 
 void registro_resibos(char numero_cuenta[N][10] )
 {
@@ -13,15 +13,15 @@ void registro_resibos(char numero_cuenta[N][10] )
         system("cls");
         cout << "ingrese el numero de cuenta del usuario al que desea agregar consumo de agua" << endl;
 		cin >> c_usuario;
-        fflush(stddin);
+        fflush(stdin);
 		system("cls");
 		cout << "ingrese el mes del que desea generar registro" << endl;
 		cout << "01 -> Enero" << "\n 02 -> Febrero" << "\n 03 -> Marzo" << "\n 04 -> Abril" << endl;
 		cout << "05 -> Mayo" << "\n 06 -> Junio" << "\n 07 -> Julio" << "\n 08 -> Agosto" << endl;
 		cout << "09 -> Septiembre " << "\n 10 -> Octubre " << "\n 11 -> Novienbre " << "\n 12 -> Dieciembre " << endl;
 		cin >> mes;
-        fflush(stddin);
-        }while(Validarmenu(mes,2)==false || validar_correlativo(numero_cuenta,c_usuario,posicion)==false);
+        fflush(stdin);
+        }while((Validarmenu1(mes)==false) || verificar_registo_resibos(numero_cuenta,c_usuario,posicion)==false);
         //mientras las funciones retornen falso, se seguira pidiendo los datos
 		
 
