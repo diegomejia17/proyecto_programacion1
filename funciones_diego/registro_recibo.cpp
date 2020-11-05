@@ -22,11 +22,11 @@ void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user)
 		cout << "09 -> Septiembre " << "\n 10 -> Octubre " << "\n 11 -> Novienbre " << "\n 12 -> Dieciembre " << endl;
 		cin >> mes;
 
-        }while(Validarmenu(mes)== 0 || verificar_registo_resibos(numero_cuenta,c_usuario,posicion)==false);
+        }while(validarmenu(mes)== 0 || verificar_registo_resibos(numero_cuenta,c_usuario,posicion)==false);
         //mientras las funciones retornen falso, se seguira pidiendo los datos
 		
 
-	menu_registo_recibo(posicion, c_usuario);
+	menu_registo_recibo(posicion, c_usuario,registro_user);
 
 
 }

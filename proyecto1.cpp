@@ -6,6 +6,7 @@
 #include "funciones_diego/registro_recibo.cpp"
 #include "constante.h"
 #include "funciones_diego/estructura_r_r.h"
+#include "funciones_francisco/validar_menu.cpp"
 
 using namespace std;
 
@@ -30,7 +31,7 @@ int main()
                         cout<<"5: salir"<<endl;
                         gets(opccion1);
                         system("Cls");
-                }while(Validarmenu(opccion1) == 0);//reciba solo numeros
+                }while(validarmenu(opccion1) == 0);//reciba solo numeros
                 opccion = atoi(opccion1);//pasar de char a int
             switch(opccion)
                 {
