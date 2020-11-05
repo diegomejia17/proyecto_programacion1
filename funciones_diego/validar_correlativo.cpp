@@ -11,4 +11,4 @@ bool verificar_registo_resibos(char numero_cuenta[N][10], char c_ingresada[10], 
 		}
 	}
 	return false; //si el condicional no se cumple durante todo el for, retornara falso
-}
+} 

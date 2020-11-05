@@ -5,17 +5,20 @@
 #include "funciones_francisco/menu_registro_usuario.cpp"
 #include "funciones_diego/registro_recibo.cpp"
 #include "constante.h"
+#include "funciones_diego/estructura_r_r.h"
 
 using namespace std;
 
+
 int main()
     {
+        register_anual * registro_user = new register_anual[N];
         char Nombres[N][100] = {"\0"}, Apellidos[N][100] = {"\0"};
         char  Numero_cuenta[N][10] = {"\0"}, anio[N][11] = {"\0"}, Dui[N][11] = {"\0"};
         int  i= 0;
         int opccion;
         char opccion1[1];
-        char registro_r[2][N];
+        
 
         do{
                 do{
@@ -27,7 +30,7 @@ int main()
                         cout<<"5: salir"<<endl;
                         gets(opccion1);
                         system("Cls");
-                }while(Validarmenu(opccion1,1) == false);//reciba solo numeros
+                }while(Validarmenu(opccion1) == 0);//reciba solo numeros
                 opccion = atoi(opccion1);//pasar de char a int
             switch(opccion)
                 {
@@ -39,7 +42,7 @@ int main()
                                 } break;
                         case 2: 
                                 {
-                                        registro_resibos(Numero_cuenta);
+                                        registro_resibos(Numero_cuenta,registro_user);
                                 }break;
                         case 3:
                                 {

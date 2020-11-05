@@ -1,9 +1,9 @@
 #include "registro_recibo.h"
 #include <iostream>
-#include "../funciones_francisco/validarmenu.cpp"
+#include "../funciones_francisco/validar_menu.cpp"
 #include "validar_correlativo.cpp"
 #include "menu_registro_recibo.cpp"
-void registro_resibos(char numero_cuenta[N][10] )
+void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user)
 {
 	char c_usuario[10] = { '\0' };//arreglo que contiene el numero correlativo que sera evaluado
 	int posicion;//almacena la pocicion del numero correlativo
@@ -22,7 +22,7 @@ void registro_resibos(char numero_cuenta[N][10] )
 		cout << "09 -> Septiembre " << "\n 10 -> Octubre " << "\n 11 -> Novienbre " << "\n 12 -> Dieciembre " << endl;
 		cin >> mes;
 
-        }while(Validarmenu(mes,2)==false || verificar_registo_resibos(numero_cuenta,c_usuario,posicion)==false);
+        }while(Validarmenu(mes)== 0 || verificar_registo_resibos(numero_cuenta,c_usuario,posicion)==false);
         //mientras las funciones retornen falso, se seguira pidiendo los datos
 		
 

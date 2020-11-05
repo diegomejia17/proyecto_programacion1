@@ -1,4 +1,6 @@
 #include <string.h>
+#include <stdlib.h>
+#include <iostream>
 #include "numero_correlativo.h"
 using namespace std;
 
