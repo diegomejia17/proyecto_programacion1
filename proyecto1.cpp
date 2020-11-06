@@ -43,7 +43,7 @@ int main()
                                 } break;
                         case 2: 
                                 {
-                                        registro_resibos(Numero_cuenta,registro_user);
+                                        registro_resibos(Numero_cuenta,registro_user,Nombres);
                                 }break;
                         case 3:
                                 {

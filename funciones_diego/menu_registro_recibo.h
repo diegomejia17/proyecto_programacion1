@@ -2,5 +2,5 @@
 #include "estructura_r_r.h"
 #ifndef __menu_recibo_h
 #define __menu_recibo_h
-void menu_registo_recibo(int posicion, char c_usuario[10],register_anual * registro_user);
+void menu_registro_recibo(int posicion, char c_usuario[10],register_anual * registro_user, char nombres[N][100], char mes[1]);
 #endif
