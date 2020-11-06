@@ -2,7 +2,7 @@
 #include "nuevo_usuario.h"
 #include "numero_correlativo.h"
 #include "editar_cuenta.h"
-#include "validarmenu.h"
+#include "validarmenu1.h"
 extern const  int N = 100;
 using namespace std;
 /*---------------------------------------FUNCION MENU DE REGISTROS DE LOS USUARIOS---------------------------------------------*/
@@ -20,7 +20,7 @@ void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char 
                         cout<<"4: Menu principal"<<endl;
                         cin>>Opc;
                         system("Cls");
-                }while(Validarmenu(Opc) == false);//reciba solo numeros
+                }while(Validarmenu1(Opc) == false);//reciba solo numeros
                 Opc_Registro = atoi(Opc);//pasar de char a int
                 switch(Opc_Registro)
                         {

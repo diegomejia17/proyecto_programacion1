@@ -1,5 +1,6 @@
 #include "validar_correlativo.h"
 #include "menu_registro_recibo.h"
+//#include "validamenu1.h"
 #include "validamenu1.h"
 
 void registro_resibos(char numero_cuenta[N][10] )
