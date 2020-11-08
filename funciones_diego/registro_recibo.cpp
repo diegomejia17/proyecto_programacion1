@@ -1,6 +1,5 @@
 #include "registro_recibo.h"
 #include <iostream>
-#include "menu_validado.cpp"
 #include "validar_correlativo.cpp"
 #include "menu_registro_recibo.cpp"
 void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,char nombres[N][100])
@@ -8,6 +7,7 @@ void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,c
 	char c_usuario[10] = { '\0' };//arreglo que contiene el numero correlativo que sera evaluado
 	int posicion;//almacena la pocicion del numero correlativo
 	char mes [1];//almacena el mes que se desea pagar
+	int mes_n;
 
     do
     {
@@ -21,8 +21,9 @@ void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,c
 		cout << "05 -> Mayo" << "\n 06 -> Junio" << "\n 07 -> Julio" << "\n 08 -> Agosto" << endl;
 		cout << "09 -> Septiembre " << "\n 10 -> Octubre " << "\n 11 -> Novienbre " << "\n 12 -> Dieciembre " << endl;
 		cin >> mes;
+		mes_n= atoi(mes);
 
-        }while(menuvalidado(mes)== false || verificar_registo_resibos(numero_cuenta,c_usuario,posicion)==false);
+        }while( verificar_registo_resibos(numero_cuenta,c_usuario,posicion)==false || mes_n<=0 || mes_n >12);
         //mientras las funciones retornen falso, se seguira pidiendo los datos
 		
 

@@ -11,7 +11,7 @@ void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_use
 	float pago;
 	do
 	{
-		cout <<"ingrese el consumo que tendra el usuario: "<< c_usuario<<endl;
+		cout <<"ingrese el consumo de metros cubicos de agua que tendra el usuario: "<< c_usuario<<endl;
 		cout <<" llamado: "<< nombres[posicion]<<endl;
 		cout << "en el mes:  "<<mes<<endl;
 		
@@ -19,11 +19,13 @@ void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_use
 		cin>>pago;
 		
 		
-		if(registro_user[posicion].registro_anual[1][mes_n]>0&&registro_user[posicion].registro_anual[2][mes_n]>0&& pago > 0)
+		if(mes_n>0 && pago > 0)
 		{
 			registro_user[posicion].registro_anual[2][mes_n]=pago;
 			exito = true;
 		cout <<"registro exitoso"<<endl;
+		system("pause>0");
+		system("cls");
 		
 		return;	
 		}
