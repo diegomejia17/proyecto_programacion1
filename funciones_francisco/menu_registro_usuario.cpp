@@ -4,8 +4,6 @@
 #include "menu_registro_usuario.h"
 #include "numero_correlativo.cpp"
 #include "editar_cuenta.cpp"
-#include "validar_menu.cpp"
-
 using namespace std;
 /*---------------------------------------FUNCION MENU DE REGISTROS DE LOS USUARIOS---------------------------------------------*/
 void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int i)//funcion para agregar modificar y eliminar los usuarios
@@ -13,6 +11,7 @@ void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char 
     { 
             int Opc_Registro;
             char Opc[1];
+            char c;
             do{
                 do{
                         cout<<"Registros"<<endl;
@@ -21,8 +20,9 @@ void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char 
                         cout<<"3: Eliminar cuenta"<<endl;
                         cout<<"4: Menu principal"<<endl;
                         gets(Opc);
+                        c = Opc[0];
                         system("Cls");
-                }while(validarmenu(Opc) == 0);//reciba solo numeros
+                }while ( isdigit (c) == 0);//reciba solo numeros
                 Opc_Registro = atoi(Opc);//pasar de char a int
                 switch(Opc_Registro)
                         {

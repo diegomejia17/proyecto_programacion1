@@ -6,7 +6,7 @@
 #include "funciones_diego/registro_recibo.cpp"
 #include "constante.h"
 #include "funciones_diego/estructura_r_r.h"
-#include "funciones_francisco/validar_menu.cpp"
+
 
 using namespace std;
 
@@ -19,7 +19,9 @@ int main()
         int  i= 0;
         int opccion;
         char opccion1[1];
-        
+        char c;
+  		
+  		
 
         do{
                 do{
@@ -30,8 +32,10 @@ int main()
                         cout<<"4: Informe de pago de usuarios"<<endl;
                         cout<<"5: salir"<<endl;
                         gets(opccion1);
+                        
                         system("Cls");
-                }while(validarmenu(opccion1) == 0);//reciba solo numeros
+                        c=opccion1[0];
+                }while((isdigit (c)) == 0);//reciba solo numeros
                 opccion = atoi(opccion1);//pasar de char a int
             switch(opccion)
                 {
