@@ -30,7 +30,4 @@ void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,c
 	menu_registro_recibo(posicion, c_usuario, registro_user , nombres , mes); /* 
 	esta funcion sirve para mostrar las opciones para poder registrar un consumo de agua o modificar, 
 	ademas en ella estan contenidas las otras funciones correspondientes a las opciones del men*/
-	
-
-
 }
