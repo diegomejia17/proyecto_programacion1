@@ -12,7 +12,7 @@ int ValidarNumeros(char Nu[P][11], int i)
                                 c=Nu[i][j];
                                 if(isdigit (c) == 0)//Falso si el caracter no es letra
                                         {
-                                                cout<<"El caracter: "<<c<<" no es valido"<<endl;
+                                                gotoxy(5,15);cout<<"El caracter: "<<c<<" no es valido"<<endl;
                                                 return 0;
                                         }
                         }

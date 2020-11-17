@@ -1,4 +1,4 @@
-
+#include <windows.h>
 #include<string.h>
 #include "nuevo_usuario.cpp"
 #include "menu_registro_usuario.h"
@@ -14,11 +14,14 @@ void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char 
             char c;
             do{
                 do{
-                        cout<<"Registros"<<endl;
-                        cout<<"1: Nueva cuenta"<<endl;
-                        cout<<"2: Editar cuenta"<<endl;
-                        cout<<"3: Eliminar cuenta"<<endl;
-                        cout<<"4: Menu principal"<<endl;
+                        interfaz(1, 27, 1, 80);
+                        interfaz(2, 26, 2, 79);
+                        gotoxy(30,2);cout<<"R E G I S T R O S"<<endl;
+                        gotoxy(5,4);cout<<"1: Nueva cuenta"<<endl;
+                        gotoxy(5,6);cout<<"2: Editar cuenta"<<endl;
+                        gotoxy(5,8);cout<<"3: Eliminar cuenta"<<endl;
+                        gotoxy(5,10);cout<<"4: Menu principal"<<endl;
+                        gotoxy(17,16);cout<<"Seleccione una opcion: ";
                         gets(Opc);
                         c = Opc[0];
                         system("Cls");
@@ -49,4 +52,5 @@ void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char 
                         }
                     }while(Opc_Registro != 4);
     }
+
 

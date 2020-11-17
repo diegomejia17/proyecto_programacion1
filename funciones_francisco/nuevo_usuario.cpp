@@ -3,37 +3,56 @@
 #include "validar_letras.cpp"
 #include "validar_numeros.cpp"
 #include "ortografia.cpp"
+#include "interfaz.cpp"
 using namespace std;
-
 /*---------------------------------------FUNCION PARA CREAR UN NUEVO USUARIO---------------------------------------------*/
 void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int i)
         {
                         //agregar usuarios maximo 100
-                        fflush(stdin);
-
+                        interfaz(1, 27, 1, 80);
+                        interfaz(2, 26, 2, 79);
+                        gotoxy(28,2);cout<<"D A T O S  P E R S O N A L E S"<<endl;
                         do{
-                                cout<<"Ingresa los nombre"<<endl;
+                                fflush(stdin);
+                               gotoxy(5,4); cout<<"Nombre: ";
                                 gets(Nombres[i]);
                                 Ortografia(Nombres, i);
+                                if(ValidarLetras(Nombres, i) == false)
+                                        {
+                                                 gotoxy(5,15);cout << "Caracter invalido   ";
+                                        }
+                                        else
+                                                {
+                                                        gotoxy(5,15);cout << "Registrado con exito";
+                                                }
+                                        
                         }while(ValidarLetras(Nombres, i) == false);
 
                         do{
-                                cout<<"Ingresa Tus apellidos"<<endl;
+                                gotoxy(5,5);cout<<"Apellido: ";
                                 gets(Apellidos[i]);
                                 Ortografia(Apellidos, i);
+                                if(ValidarLetras(Apellidos, i) == false)
+                                        {
+                                                gotoxy(5,15);cout << "Caracter invalido   ";
+                                        }
+                                        else
+                                                {
+                                                        gotoxy(5,15);cout << "Registrado con exito";
+                                                }
                         }while(ValidarLetras(Apellidos, i) == false);
                         do{
-                                cout<<"Ingrese el anio de asociado"<<endl;
+                                gotoxy(5,6);cout<<"Anio de asociado: ";
                                 gets(anio[i]);
                                 
                                 if(strlen(anio[i]) <4 || strlen(anio[i]) >4)
                                         {
-                                           cout<<"Tiene que ingresar 4 digitos"<<endl;     
+                                           gotoxy(5,15);cout<<"Datos ingresados son mayor o menor a 4 digitos"<<endl; 
                                         }
                         }while(ValidarNumeros(anio,i) == false || (strlen(anio[i]) <4 || strlen(anio[i]) >4));
 
                          do{
-                                cout<<"Ingresa el numero de DUI"<<endl;
+                                gotoxy(5,7);cout<<"Numero de DUI: ";
                                 gets(Dui[i]);
                         }while(ValidarNumeros(Dui,i) == false);
                         system("Cls");
