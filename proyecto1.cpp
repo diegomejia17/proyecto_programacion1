@@ -34,17 +34,21 @@ int main()
                 do{
                         interfaz(1, 27, 1, 80);
                         interfaz(2, 26, 2, 79);
-                        gotoxy(25,2);cout<<"CONTROL DE RECIBO DE AGUA"<<endl;
-                        gotoxy(5,4);cout<<"1: Registro de usuario"<<endl;
-                        gotoxy(5,6);cout<<"2: Registro de consumo de agua mensual"<<endl;
-                        gotoxy(5,8);cout<<"3: Registro de pago de recibo de agua"<<endl;
-                        gotoxy(5,10);cout<<"4: Informe de pago de usuarios"<<endl;
-                        gotoxy(5,12);cout<<"5: salir"<<endl;
-                        gotoxy(17,16);cout<<"Seleccione una opcion: ";
-                        gets(opccion1);
-                        
-                        system("Cls");
+                        gotoxy(27,2);cout<<"\x1b[1;34mCONTROL DE RECIBO DE AGUA\033[0m"<<endl;
+                        gotoxy(5,6);cout<<"1: Registro de usuario"<<endl;
+                        gotoxy(5,8);cout<<"2: Registro de consumo de agua mensual"<<endl;
+                        gotoxy(5,10);cout<<"3: Registro de pago de recibo de agua"<<endl;
+                        gotoxy(5,12);cout<<"4: Informe de pago de usuarios"<<endl;
+                        gotoxy(5,14);cout<<"5: salir"<<endl;
+                        gotoxy(23,20);cout<<"\x1b[36m* Seleccione una opcion:\033[0m ";
+                        gets(opccion1);                        
                         c=opccion1[0];
+                        if(((isdigit (c)) == 0))
+                                {
+                                        gotoxy(31,25);cout<<"\x1b[41;37m* Opccion incorrecta *\033[0m";
+                                        system("pause>null");  
+                                }
+                        system("Cls");
                 }while((isdigit (c)) == 0);//reciba solo numeros
                 opccion = atoi(opccion1);//pasar de char a int
             switch(opccion)

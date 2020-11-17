@@ -19,12 +19,8 @@ void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char
                                 Ortografia(Nombres, i);
                                 if(ValidarLetras(Nombres, i) == false)
                                         {
-                                                 gotoxy(5,15);cout << "Caracter invalido   ";
+                                                 gotoxy(31,25);cout<<"\x1b[41;37m* Caracter invalido * \033[0m ";
                                         }
-                                        else
-                                                {
-                                                        gotoxy(5,15);cout << "Registrado con exito";
-                                                }
                                         
                         }while(ValidarLetras(Nombres, i) == false);
 
@@ -34,12 +30,8 @@ void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char
                                 Ortografia(Apellidos, i);
                                 if(ValidarLetras(Apellidos, i) == false)
                                         {
-                                                gotoxy(5,15);cout << "Caracter invalido   ";
+                                                gotoxy(31,25);cout<<"\x1b[41;37m* Caracter invalido *\033[0m ";
                                         }
-                                        else
-                                                {
-                                                        gotoxy(5,15);cout << "Registrado con exito";
-                                                }
                         }while(ValidarLetras(Apellidos, i) == false);
                         do{
                                 gotoxy(5,6);cout<<"Anio de asociado: ";
@@ -47,7 +39,7 @@ void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char
                                 
                                 if(strlen(anio[i]) <4 || strlen(anio[i]) >4)
                                         {
-                                           gotoxy(5,15);cout<<"Datos ingresados son mayor o menor a 4 digitos"<<endl; 
+                                           gotoxy(31,25);cout<<"\x1b[41;37m* Datos ingresados son mayor o menor a 4 digitos *\033[0m"<<endl; 
                                         }
                         }while(ValidarNumeros(anio,i) == false || (strlen(anio[i]) <4 || strlen(anio[i]) >4));
 
