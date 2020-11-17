@@ -18,7 +18,7 @@ int main()
     {
             
             //interfaz(1, 20, 1, 61);
-           // system("mode con: cols = 500 lines = 100");//dar tamaño a la pantalla
+        system("mode con: cols=82 lines=30");//dar tamaño a la pantalla//dar tamaño a la pantalla
         SetConsoleTitle("CONTROL DE RECIBO DE AGUA");
         register_anual * registro_user = new register_anual[N];
         llenando(registro_user);   //esta funcion llena la matriz de la estructura con ceros
