@@ -16,14 +16,21 @@ void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char 
                 do{
                         interfaz(1, 27, 1, 80);
                         interfaz(2, 26, 2, 79);
-                        gotoxy(30,2);cout<<"R E G I S T R O S"<<endl;
-                        gotoxy(5,4);cout<<"1: Nueva cuenta"<<endl;
-                        gotoxy(5,6);cout<<"2: Editar cuenta"<<endl;
-                        gotoxy(5,8);cout<<"3: Eliminar cuenta"<<endl;
-                        gotoxy(5,10);cout<<"4: Menu principal"<<endl;
-                        gotoxy(17,16);cout<<"Seleccione una opcion: ";
+                        gotoxy(30,2);cout<<"\x1b[1;34mR E G I S T R O S\033[0m"<<endl;
+                        gotoxy(5,6);cout<<"1: Nueva cuenta"<<endl;
+                        gotoxy(5,8);cout<<"2: Editar cuenta"<<endl;
+                        gotoxy(5,10);cout<<"3: Eliminar cuenta"<<endl;
+                        gotoxy(5,12);cout<<"4: Menu principal"<<endl;
+                        gotoxy(23,16);cout<<"\x1b[36mSeleccione una opcion:\033[0m ";
                         gets(Opc);
                         c = Opc[0];
+                        int opccion;
+                        opccion = atoi(Opc);
+                        if(((isdigit (c)) == 0) || (opccion >= 5))
+                                {
+                                        gotoxy(31,25);cout<<"\x1b[41;37m* Opccion incorrecta *\033[0m";
+                                        system("pause>null");  
+                                }
                         system("Cls");
                 }while ( isdigit (c) == 0);//reciba solo numeros
                 Opc_Registro = atoi(Opc);//pasar de char a int
@@ -50,7 +57,7 @@ void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char 
                                                 //salir
                                         }break;
                         }
-                    }while(Opc_Registro != 4);
+                    }while((Opc_Registro != 4));
     }
 
 
