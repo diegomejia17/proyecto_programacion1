@@ -16,6 +16,7 @@ using namespace std;
 
 int main()
     {
+           
             
             //interfaz(1, 20, 1, 61);
         system("mode con: cols=82 lines=30");//dar tamaño a la pantalla//dar tamaño a la pantalla
@@ -31,6 +32,7 @@ int main()
         char c;
 
         do{
+                
                 do{
                         interfaz(1, 27, 1, 80);
                         interfaz(2, 26, 2, 79);
@@ -73,7 +75,11 @@ int main()
                                 }break;
                         default:
                                 {
-                                    cout<<"Vuelva pronto!!"<<endl;    
+                                        interfaz(1, 27, 1, 80);
+                                        interfaz(2, 26, 2, 79);
+                                         gotoxy(27,2);cout<<"\x1b[1;34mCONTROL DE RECIBO DE AGUA\033[0m"<<endl;
+                                         interfaz(14, 17, 49, 62);
+                                        gotoxy(31,16);cout<<"Vuelva pronto!!";    
                                 }break;
 
                 }        
