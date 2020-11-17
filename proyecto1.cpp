@@ -7,6 +7,8 @@
 #include "constante.h"
 #include "funciones_diego/estructura_r_r.h"
 #include "funciones_diego/llenado.cpp"
+#include "funciones_francisco/Interfaz.h"
+
 
 
 using namespace std;
@@ -14,6 +16,10 @@ using namespace std;
 
 int main()
     {
+            
+            //interfaz(1, 20, 1, 61);
+        system("mode con: cols=82 lines=30");//dar tamaño a la pantalla//dar tamaño a la pantalla
+        SetConsoleTitle("CONTROL DE RECIBO DE AGUA");
         register_anual * registro_user = new register_anual[N];
         llenando(registro_user);   //esta funcion llena la matriz de la estructura con ceros
 
@@ -26,12 +32,15 @@ int main()
 
         do{
                 do{
-                        cout<<"CONTROL DE RECIBO DE AGUA"<<endl;
-                        cout<<"1: Registro de usuario"<<endl;
-                        cout<<"2: Registro de consumo de agua mensual"<<endl;
-                        cout<<"3: Registro de pago de recibo de agua"<<endl;
-                        cout<<"4: Informe de pago de usuarios"<<endl;
-                        cout<<"5: salir"<<endl;
+                        interfaz(1, 27, 1, 80);
+                        interfaz(2, 26, 2, 79);
+                        gotoxy(25,2);cout<<"CONTROL DE RECIBO DE AGUA"<<endl;
+                        gotoxy(5,4);cout<<"1: Registro de usuario"<<endl;
+                        gotoxy(5,6);cout<<"2: Registro de consumo de agua mensual"<<endl;
+                        gotoxy(5,8);cout<<"3: Registro de pago de recibo de agua"<<endl;
+                        gotoxy(5,10);cout<<"4: Informe de pago de usuarios"<<endl;
+                        gotoxy(5,12);cout<<"5: salir"<<endl;
+                        gotoxy(17,16);cout<<"Seleccione una opcion: ";
                         gets(opccion1);
                         
                         system("Cls");
@@ -71,6 +80,8 @@ int main()
         getchar();
         cin.get();
     }
+
+
 
 
 
