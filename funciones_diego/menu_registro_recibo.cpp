@@ -10,7 +10,7 @@ using namespace std;
 void menu_registro_recibo(int posicion, char c_usuario[10],register_anual * registro_user,char nombres[N][100],char mes [1])
 {
 	int opcionnumber;
-	char opcionletra[1];	//variables que se en la funcion
+	char opcionletra[1];	
 	
 	do
 	{

@@ -9,7 +9,8 @@ void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_use
 {
 	int mes_n= atoi(mes);
 	bool exito = false;
-	float pago;
+	char  registro[20];
+	float Fregistro;
 	do
 	{
 		if (registro_user[posicion].registro_anual[2][mes_n]==0)
@@ -22,14 +23,21 @@ void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_use
 			
 			registro_user[posicion].registro_anual[1][mes_n]=mes_n;//en la estructura 
 																   //el mes sera el que ingreso el cliente
-			cin>>pago;
-			
-			
-			if(mes_n>0 && pago > 0)
+			cin>>registro;
+			if (isdigit(registro[0])== 0)
+			{
+				Fregistro = 0;
+			}
+			else
+			{
+				Fregistro = atof(registro);
+			}
+	
+			if(mes_n>0 && Fregistro > 0)
 			//si el mes que el cliente ingreso es mayor a cero y el consumo de agua es mayor a cero se cumplira
 			//lo que esta dentro de este condicional
 			{
-				registro_user[posicion].registro_anual[2][mes_n]=pago;
+				registro_user[posicion].registro_anual[2][mes_n]=Fregistro;
 				exito = true;
 				cout <<"registro exitoso"<<endl;
 				system("pause>0");

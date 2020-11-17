@@ -3,6 +3,6 @@
 #include <iostream>
 struct register_anual
 {
-        float registro_anual[2][12];
+        float registro_anual[3][12];
 };
 #endif
