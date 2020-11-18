@@ -1,6 +1,8 @@
 #include "validar_letras.h"
 #include "gotoxy.h"
 #include <string.h>
+#include <windows.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -16,6 +18,8 @@ int ValidarLetras(char Ca[N][N], int i)
                                         {
                                                 if (isspace(c) == 0)//verdadero si tiene espacio
                                                         {
+                                                                gotoxy(31,25);cout<<"\x1b[41;37m* Caracter invalido * \033[0m"<<endl;
+                                                                cout<<"\e[A";
                                                                 return 0;
                                                         }
                                         }

@@ -72,7 +72,7 @@ int main()
                         case 4:
                                 {
 
-                                }break;
+                             }break;
                         default:
                                 {
                                         interfaz(1, 27, 1, 80);
@@ -90,10 +90,3 @@ int main()
         getchar();
         cin.get();
     }
-
-
-
-
-
-
-
