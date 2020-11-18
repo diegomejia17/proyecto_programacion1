@@ -9,9 +9,6 @@
 #include "funciones_diego/llenado.cpp"
 #include "funciones_francisco/Interfaz.h"
 
-
-
-
 using namespace std;
 
 

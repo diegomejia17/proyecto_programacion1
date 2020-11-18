@@ -3,7 +3,6 @@
 #include "validar_correlativo.cpp"
 #include "menu_registro_recibo.cpp"
 
-
 void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,char nombres[N][100])
 {	/*esta funcion lo que hace es pedir los datos principales
  	y ademas de ejercer como puente en funciones*/
