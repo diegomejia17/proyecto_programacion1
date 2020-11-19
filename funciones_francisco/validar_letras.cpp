@@ -5,7 +5,6 @@
 #include <stdlib.h>
 
 using namespace std;
-
 /*---------------------------------------FUNCION PARA VALIDAR LETRA---------------------------------------------*/
 int ValidarLetras(char Ca[N][N], int i)      
         {
@@ -18,8 +17,9 @@ int ValidarLetras(char Ca[N][N], int i)
                                         {
                                                 if (isspace(c) == 0)//verdadero si tiene espacio
                                                         {
-                                                                gotoxy(31,25);cout<<"\x1b[41;37m* Caracter invalido * \033[0m"<<endl;
-                                                                cout<<"\e[A";
+                                                                gotoxy(31,25);cout<<"\x1b[41;37m* Caracter invalido * \033[0m\r";
+                                                                system("pause>null");
+                                                                gotoxy(31,25);cout<<"\033[1m                        \033[0m";
                                                                 return 0;
                                                         }
                                         }
