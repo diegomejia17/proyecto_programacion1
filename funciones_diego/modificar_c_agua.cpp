@@ -68,6 +68,7 @@ esta funcion sirve para modificar el registro del consumo del agua por si se lle
 								exito = true;
 								color(1);
 								gotoxy(8,14);cout <<"registro exitoso"<<endl;
+								gotoxy(8,16);;cout <<"El consumo del mes es de: "<<registro_user[posicion].registro_anual[2][mes_n]<<endl;
 								color(0);
 								system("pause>0");
 								system("cls");
@@ -90,6 +91,7 @@ esta funcion sirve para modificar el registro del consumo del agua por si se lle
 										exito = true;
 										color(1);
 										gotoxy(8,14);cout <<"registro exitoso"<<endl;
+										gotoxy(8,16);;cout <<"El consumo del mes es de: "<<registro_user[posicion].registro_anual[2][mes_n]<<endl;
 										color(0);
 										system("pause>0");
 										system("cls");

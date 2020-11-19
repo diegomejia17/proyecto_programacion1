@@ -61,6 +61,7 @@ int main()
                         case 2: 
                                 {
                                         registro_resibos(Numero_cuenta,registro_user,Nombres);
+                                         system("Cls");
                                 }break;
                         case 3:
                                 {

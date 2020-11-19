@@ -14,6 +14,7 @@ void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,c
 	int posicion;	//almacena la pocicion del numero correlativo
 	char mes [1];	//almacena el mes que se desea pagar
 	int mes_n;
+	char clear;
 	bool exito = false;
 	
     do
@@ -43,8 +44,8 @@ void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,c
 			exito = true;
 			system("cls");
 		}
-		
-		
+		clear = cin.get();
+		fflush(stdin);
     }while( exito == false );
      
 
@@ -96,13 +97,14 @@ void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,c
 					
 			}
 			
-			
-
+			fflush(stdin);
 		} while(exito == false);
 
 		menu_registro_recibo(posicion, c_usuario, registro_user , nombres , mes); /* 
 		esta funcion sirve para mostrar las opciones para poder registrar un consumo de agua o modificar, 
 		ademas en ella estan contenidas las otras funciones correspondientes a las opciones del men*/
+		clear = cin.get();
+		fflush(stdin);
 }
 
 	}

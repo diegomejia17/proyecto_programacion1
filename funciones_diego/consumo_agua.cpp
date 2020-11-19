@@ -62,7 +62,8 @@ void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_use
 					registro_user[posicion].registro_anual[1][mes_n]=Fregistro;
 					exito = true;
 					color(1);
-					gotoxy(8,12);cout <<"registro exitoso"<<endl;
+					gotoxy(8,12);cout <<"Registro exitoso"<<endl;
+					gotoxy(8,14);;cout <<"El consumo del mes es de: "<<registro_user[posicion].registro_anual[2][mes_n]<<endl;
 					color(0);
 					system("pause>0");
 					system("cls");
@@ -85,6 +86,7 @@ void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_use
 							exito = true;
 							color(1);
 							gotoxy(8,12);cout <<"registro exitoso"<<endl;
+							gotoxy(8,14);;cout <<"El consumo del mes es de: "<<registro_user[posicion].registro_anual[2][mes_n]<<endl;
 							color(0);
 							system("pause>0");
 							system("cls");
