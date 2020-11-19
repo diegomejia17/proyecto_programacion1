@@ -14,7 +14,6 @@ using namespace std;
 
 int main()
     {
-           
             
             //interfaz(1, 20, 1, 61);
         system("mode con: cols=82 lines=30");//dar tamaño a la pantalla//dar tamaño a la pantalla

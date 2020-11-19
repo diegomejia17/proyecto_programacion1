@@ -1,5 +1,7 @@
 #include "gotoxy.h"
 #include<iostream>
+#include "Interfaz.h"
+using namespace std;
 void interfaz(int x1,int x2, int y1, int y2)
         {
                 for(int j = x1; j < y2; j++)

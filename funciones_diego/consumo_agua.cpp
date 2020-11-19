@@ -1,9 +1,14 @@
-#include "consumo_agua.h"
+
 #include <stdlib.h>
 #include <string.h>
-#include <iostream>
-using namespace std;
+#include "estructura_r_r.h"
+#include "../constante.h"
+#include<iostream>
+#include "consumo_agua.h"
+#include "colores.cpp"
+#include "../funciones_francisco/Interfaz.h"
 
+using namespace std;
 void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_user,char nombres[N][100],char mes [1])
 /*en esta funcion se pide los datos para establecer el consumo al cliente que se ingreso*/
 {
@@ -16,14 +21,19 @@ void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_use
 		if (registro_user[posicion].registro_anual[2][mes_n]==0)
 		//si aun no se a ingresado nada en la matriz de la estructura, entonces se pediran los datos
 		{
-		
-			cout <<"ingrese el consumo de metros cubicos de agua que tendra el usuario: "<< c_usuario<<endl;
-			cout <<" llamado: "<< nombres[posicion]<<endl;
-			cout << "en el mes:  "<<mes<<endl;
+			interfaz(1, 27, 1, 80);
+			interfaz(2, 26, 2, 79);
+			color(1);
+			gotoxy(27,2);cout <<"INGRESO DE CONSUMO"<<endl;
+			color(0);
+			gotoxy(8,4);cout <<"Usuario: "<< c_usuario<<endl;
+			gotoxy(8,6);cout <<"Nombre: "<< nombres[posicion]<<endl;
+			gotoxy(8,8);cout << "Mes:  "<<mes<<endl;
+			gotoxy(8,10);cout << "Registre el consumo :  ";
 			
 			registro_user[posicion].registro_anual[0][mes_n]=mes_n;//en la estructura 
 																   //el mes sera el que ingreso el cliente
-			cin>>registro;
+			cin>>registro;//variable que llenara el usuario
 			int i = 0;
 			float  anterior;
 			do
@@ -34,10 +44,10 @@ void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_use
 			}
 			else
 			{
-				Fregistro = atof(registro);
+				Fregistro = atof(registro);//convercion de char a float 
 			}
 			i ++;
-			} while (i< strlen(registro));
+			} while (i< strlen(registro));//validacion para que solo se acepten numeros
 			
 			if(mes_n>0 && Fregistro > 0)
 			//si el mes que el cliente ingreso es mayor a cero y el consumo de agua es mayor a cero se cumplira
@@ -46,10 +56,14 @@ void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_use
     		
 			if (mes_n==1)
 				{
+					//si se esta llenando el primer mes, no de debe efectuar la resta
+					//por lo que el proceso debe finalizar
 					registro_user[posicion].registro_anual[2][mes_n]=Fregistro;
 					registro_user[posicion].registro_anual[1][mes_n]=Fregistro;
 					exito = true;
-					cout <<"registro exitoso"<<endl;
+					color(1);
+					gotoxy(8,12);cout <<"registro exitoso"<<endl;
+					color(0);
 					system("pause>0");
 					system("cls");
 					return;	
@@ -58,21 +72,31 @@ void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_use
 				{
 					
 					anterior = registro_user[posicion].registro_anual[1][mes_n-1];
+					//si el mes es difenerente de 1 se almacenara el valor registrado anteriormente
+					// en la variable anterior
+
 					if (anterior < Fregistro)
 						{
+							//si el valor de la variable anterior es menor que el valor de la variable
+							//modificar entonses se ejecutara el cambio
 							registro_user[posicion].registro_anual[1][mes_n]=Fregistro;
 
 							registro_user[posicion].registro_anual[2][mes_n]=(Fregistro - anterior);
 							exito = true;
-							cout <<"registro exitoso"<<endl;
+							color(1);
+							gotoxy(8,12);cout <<"registro exitoso"<<endl;
+							color(0);
 							system("pause>0");
 							system("cls");
 							return;	
 						}
 						else
 							{
+								//si lo anterior no se cumple entonces se repetira todo el proceso
 								exito = false;
-								cout <<"vuelve a intentarlo"<<endl;
+								color(2);
+								gotoxy(8,12);cout <<"vuelve a intentarlo"<<endl;
+								color(0);
 								system("pause>0");
 								system("cls");
 							}
@@ -82,15 +106,19 @@ void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_use
 			else 
 			{
 				exito=false;
-				cout <<"vuelve a intentarlo"<<endl;
+				color(2);
+				gotoxy(8,12);cout <<"vuelve a intentarlo"<<endl;
+				color(0);
 				system("pause>0");
 				system("cls");
 			}
 		}
 		else
 		{
-			exito=true;
-				cout <<"ya existen registros"<<endl;
+				exito=true;
+				color(1);
+				gotoxy(27,2);cout <<"ya existen registros"<<endl;
+				color(0);
 				system("pause>0");
 				system("cls");
 		}
