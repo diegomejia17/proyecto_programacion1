@@ -24,7 +24,7 @@ void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,c
         //mientras las funciones retornen falso, se seguira pidiendo los datos
 	do
 	{
-		cout << "ingrese el mes del que desea generar registro" << endl;
+		gotoxy(6,6);cout << "ingrese el mes del que desea generar registro" << endl;
 		cout << " 01 -> Enero" << "\n 02 -> Febrero" << "\n 03 -> Marzo" << "\n 04 -> Abril" << endl;
 		cout << " 05 -> Mayo" << "\n 06 -> Junio" << "\n 07 -> Julio" << "\n 08 -> Agosto" << endl;
 		cout << " 09 -> Septiembre " << "\n 10 -> Octubre " << "\n 11 -> Novienbre " << "\n 12 -> Diciembre " << endl;

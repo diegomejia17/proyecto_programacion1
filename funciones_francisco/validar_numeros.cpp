@@ -13,6 +13,8 @@ int ValidarNumeros(char Nu[P][11], int i)
                                 if(isdigit (c) == 0)//Falso si el caracter no es letra
                                         {
                                                 gotoxy(22,25);cout<<"\x1b[41;37m* El caracter no es valido *\033[0m"<<endl;
+                                                system("pause>null");
+                                                gotoxy(22,25);cout<<"\033[1m                                              \033[0m";
                                                 return 0;
                                         }
                         }
