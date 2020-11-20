@@ -42,14 +42,14 @@ int main()
                         gotoxy(23,20);cout<<"\x1b[36m* Seleccione una opcion:\033[0m ";
                         gets(opccion1);                        
                         c=opccion1[0];
-                        if(((isdigit (c)) == 0))
+                        opccion = atoi(opccion1);//pasar de char a int
+                        if(((isdigit (c)) == 0) || (opccion >= 6) || (opccion <= 0))
                                 {
                                         gotoxy(31,25);cout<<"\x1b[41;37m* Opccion incorrecta *\033[0m";
                                         system("pause>null");  
                                 }
                         system("Cls");
                 }while((isdigit (c)) == 0);//reciba solo numeros
-                opccion = atoi(opccion1);//pasar de char a int
             switch(opccion)
                 {
 
@@ -71,7 +71,7 @@ int main()
                                 {
 
                              }break;
-                        default:
+                        case 5:
                                 {
                                         interfaz(1, 27, 1, 80);
                                         interfaz(2, 26, 2, 79);
@@ -80,7 +80,9 @@ int main()
                                         gotoxy(31,16);cout<<"Vuelva pronto!!";    
                                 }break;
 
-                }        
+                }   
+      
+                        //     
             }while(opccion != 5);
             
 

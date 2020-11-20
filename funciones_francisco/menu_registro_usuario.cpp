@@ -26,7 +26,7 @@ void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char 
                         c = Opc[0];
                         int opccion;
                         opccion = atoi(Opc);
-                        if(((isdigit (c)) == 0) || (opccion >= 5))
+                        if(((isdigit (c)) == 0) || (opccion >= 5) || (opccion <= 0))
                                 {
                                         gotoxy(31,25);cout<<"\x1b[41;37m* Opccion incorrecta *\033[0m";
                                         system("pause>null");  

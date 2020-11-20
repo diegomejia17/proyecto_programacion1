@@ -26,7 +26,7 @@ void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,c
 		color(0);
 		gotoxy(20,6);cout << " Ingrese el numero correlativo" << endl;
 		color (0);
-		gotoxy(20,14);cout << "precione cero si desea salir " << endl;
+		gotoxy(20,14);cout << "presione cero si desea salir " << endl;
 		gotoxy(20,8);cin >> c_usuario;
 		
 		
