@@ -4,7 +4,7 @@
 #include "editar_cuenta.h"
 using namespace std;
 /*---------------------------------------FUNCION PARA EDITAR CUENTA---------------------------------------------*/
-void Editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int i)
+void Editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int& i)
         {
                 
                 gotoxy(0,0);

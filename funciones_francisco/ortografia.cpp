@@ -3,7 +3,7 @@
 #include <ctype.h>
 
 
-void Ortografia(char texto[N][N],int i)
+void Ortografia(char texto[N][N],int& i)
     {
         int Nu, j = 0;
         Nu = strlen(texto[i]);

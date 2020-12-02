@@ -5,7 +5,7 @@
 using namespace std;
 
 /*---------------------------------------FUNCION PARA CREAR EL NUMERO CORRELATIVO---------------------------------------------*/
-void Numero_correlativo( char Numero_cuenta[N][10], char anio[N][11], int i)
+void Numero_correlativo( char Numero_cuenta[N][10], char anio[N][11], int& i)
         {
                 char corre[1] ;
                 strncpy(Numero_cuenta[i],anio[i],4);//COPIAR AÑO EN NUMERO DE CUENTA

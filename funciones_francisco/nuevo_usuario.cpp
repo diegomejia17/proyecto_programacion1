@@ -7,7 +7,7 @@
 #include "validar_dui.cpp"
 using namespace std;
 /*---------------------------------------FUNCION PARA CREAR UN NUEVO USUARIO---------------------------------------------*/
-void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int i)
+void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int& i)
         {
                         //agregar usuarios maximo 100
                         interfaz(1, 27, 1, 80);

@@ -3,7 +3,7 @@
  const  int P = 100;
 using namespace std;
 /*---------------------------------------FUNCION PARA VALIDAR NUMERO---------------------------------------------*/
-int ValidarNumeros(char Nu[P][11], int i)
+int ValidarNumeros(char Nu[P][11], int& i)
         {
                 int j = 0;
                 char c ;

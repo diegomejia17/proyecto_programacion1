@@ -4,7 +4,7 @@
 #include <iostream>
 
 using namespace std;
-int validar_dui(char Dui[100][11], int i)
+int validar_dui(char Dui[100][11], int& i)
     {
         int dui;
         dui = atoi(Dui[i]);

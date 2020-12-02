@@ -12,6 +12,8 @@
 
 using namespace std;
 
+int  i= 0;
+
 int main()
     {
             
@@ -22,7 +24,6 @@ int main()
         llenando(registro_user);   //esta funcion llena la matriz de la estructura con ceros
         char Nombres[N][100] = {"\0"}, Apellidos[N][100] = {"\0"};
         char  Numero_cuenta[N][10] = {"\0"}, anio[N][11] = {"\0"}, Dui[N][11] = {"\0"};
-        int  i= 0;
         int opccion;
         char opccion1[1];
         char c;

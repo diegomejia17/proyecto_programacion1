@@ -6,7 +6,7 @@
 
 using namespace std;
 /*---------------------------------------FUNCION PARA VALIDAR LETRA---------------------------------------------*/
-int ValidarLetras(char Ca[N][N], int i)      
+int ValidarLetras(char Ca[N][N], int& i)      
         {
                 int j = 0;
                 char c;
