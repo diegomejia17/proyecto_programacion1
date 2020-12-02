@@ -11,7 +11,7 @@ void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,c
  	y ademas de ejercer como puente en funciones*/
 
 	char c_usuario[10] = { '\0' };	//arreglo que contiene el numero correlativo que sera evaluado
-	int posicion;	//almacena la pocicion del numero correlativo
+	int posicion = 0;	//almacena la pocicion del numero correlativo
 	char mes [1];	//almacena el mes que se desea pagar
 	int mes_n;
 	char clear;

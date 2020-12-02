@@ -24,16 +24,15 @@ void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char 
                         gotoxy(23,16);cout<<"\x1b[36mSeleccione una opcion:\033[0m ";
                         gets(Opc);
                         c = Opc[0];
-                        int opccion;
-                        opccion = atoi(Opc);
-                        if(((isdigit (c)) == 0) || (opccion >= 5) || (opccion <= 0))
+                        Opc_Registro = atoi(Opc);//pasar de char a int
+                        if(((isdigit (c)) == 0) || (Opc_Registro >= 5) || (Opc_Registro <= 0))
                                 {
                                         gotoxy(31,25);cout<<"\x1b[41;37m* Opccion incorrecta *\033[0m";
                                         system("pause>null");  
                                 }
                         system("Cls");
                 }while ( isdigit (c) == 0);//reciba solo numeros
-                Opc_Registro = atoi(Opc);//pasar de char a int
+                
                 switch(Opc_Registro)
                         {
                                 case 1: 
@@ -59,5 +58,6 @@ void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char 
                         }
                     }while((Opc_Registro != 4));
     }
+
 
 

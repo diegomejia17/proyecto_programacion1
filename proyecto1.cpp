@@ -8,9 +8,9 @@
 #include "funciones_diego/estructura_r_r.h"
 #include "funciones_diego/llenado.cpp"
 #include "funciones_francisco/Interfaz.h"
+#include "funciones_Christian/pago.cpp"
 
 using namespace std;
-
 
 int main()
     {
@@ -20,7 +20,6 @@ int main()
         SetConsoleTitle("CONTROL DE RECIBO DE AGUA");
         register_anual * registro_user = new register_anual[N];
         llenando(registro_user);   //esta funcion llena la matriz de la estructura con ceros
-
         char Nombres[N][100] = {"\0"}, Apellidos[N][100] = {"\0"};
         char  Numero_cuenta[N][10] = {"\0"}, anio[N][11] = {"\0"}, Dui[N][11] = {"\0"};
         int  i= 0;
@@ -65,7 +64,8 @@ int main()
                                 }break;
                         case 3:
                                 {
-									
+                                        pago(Numero_cuenta,registro_user, i);
+                                        system("Cls");
                                 }break;
                         case 4:
                                 {
@@ -84,8 +84,6 @@ int main()
       
                         //     
             }while(opccion != 5);
-            
-
 
         getchar();
         cin.get();

@@ -3,6 +3,6 @@
 #include <iostream>
 struct register_anual
 {
-        float registro_anual[3][12];
+        float registro_anual[4][12];// 1 es correlativo, 2 es el consumo mensual, 3 el precio, 4 si pago o no asumiendo 1 = si y 0 = no 
 };
 #endif

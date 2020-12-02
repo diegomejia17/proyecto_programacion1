@@ -7,6 +7,7 @@
 #include "consumo_agua.h"
 #include "colores.cpp"
 #include "../funciones_francisco/Interfaz.h"
+#include "../funciones_Christian/costo.cpp"
 
 using namespace std;
 void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_user,char nombres[N][100],char mes [1])
@@ -60,6 +61,10 @@ void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_use
 					//por lo que el proceso debe finalizar
 					registro_user[posicion].registro_anual[2][mes_n]=Fregistro;
 					registro_user[posicion].registro_anual[1][mes_n]=Fregistro;
+					float consumo_mensual = Fregistro;
+					float precio = costo(consumo_mensual);
+					registro_user[posicion].registro_anual[3][mes_n]=(precio);//precio por mes
+					registro_user[posicion].registro_anual[4][mes_n]=(0);//no a pagado
 					exito = true;
 					color(1);
 					gotoxy(8,12);cout <<"Registro exitoso"<<endl;
@@ -83,6 +88,11 @@ void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_use
 							registro_user[posicion].registro_anual[1][mes_n]=Fregistro;
 
 							registro_user[posicion].registro_anual[2][mes_n]=(Fregistro - anterior);
+
+							float consumo_mensual = Fregistro - anterior;
+							float precio = costo(consumo_mensual);
+							registro_user[posicion].registro_anual[3][mes_n]=(precio);//precio por mes
+							registro_user[posicion].registro_anual[4][mes_n]=(0);//no a pagado
 							exito = true;
 							color(1);
 							gotoxy(8,12);cout <<"registro exitoso"<<endl;

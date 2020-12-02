@@ -22,15 +22,16 @@ void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char
                         }while(ValidarLetras(Nombres, i) == false);
 
                         do{
-                                gotoxy(5,6);cout<<"\033[1m                        \033[0m";
+                                gotoxy(5,6);cout<<"\033[1m                                    \033[0m";
                                 gotoxy(5,6);cout<<"Apellido: ";
                                 gets(Apellidos[i]);
                                 Ortografia(Apellidos, i);
                         }while(ValidarLetras(Apellidos, i) == false);
                         do{
-                                gotoxy(5,8);cout<<"\033[1m                        \033[0m"; 
+                                gotoxy(5,8);cout<<"\033[1m                                      \033[0m"; 
                                 gotoxy(5,8);cout<<"Anio de asociado: ";
                                 gets(anio[i]);
+                                fflush(stdin);
                                 
                                 if(strlen(anio[i]) <4 || strlen(anio[i]) >4)
                                         {
@@ -41,7 +42,7 @@ void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char
                         }while(ValidarNumeros(anio,i) == false || (strlen(anio[i]) <4 || strlen(anio[i]) >4));
 
                          do{
-                                gotoxy(5,10);cout<<"\033[1m                        \033[0m";
+                                gotoxy(5,10);cout<<"\033[1m                                                  \033[0m";
                                 gotoxy(5,10);cout<<"Numero de DUI: ";
                                 gets(Dui[i]);                                
                                  if(strlen(Dui[i]) <9 || strlen(Dui[i]) >9)
