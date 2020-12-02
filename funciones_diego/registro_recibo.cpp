@@ -6,7 +6,7 @@
 #include "colores.h"
 
 
-void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,char nombres[N][100])
+int registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,char nombres[N][100])
 {	/*esta funcion lo que hace es pedir los datos principales
  	y ademas de ejercer como puente en funciones*/
 
@@ -32,7 +32,6 @@ void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,c
 		
 		if (verificar_registo_resibos(numero_cuenta,c_usuario,posicion)==false && c_usuario[0]!= 48)
 		{
-			exito = false;
 			color(2);
 			gotoxy(20,18);cout <<"DATO INGRESADO INVALIDO"<<endl;
 			color (0);
@@ -47,10 +46,8 @@ void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,c
 		clear = cin.get();
 		fflush(stdin);
     }while( exito == false );
-     
-
 	
-	if (c_usuario[0] != 48)
+if (c_usuario[0] != 48)
 	{
 		do
 		{
@@ -100,11 +97,14 @@ void registro_resibos(char numero_cuenta[N][10],register_anual * registro_user,c
 			fflush(stdin);
 		} while(exito == false);
 
-		menu_registro_recibo(posicion, c_usuario, registro_user , nombres , mes); /* 
+		//return posicion;
+		menu_registro_recibo(numero_cuenta,posicion, c_usuario, registro_user , nombres , mes); 
+		/* 
 		esta funcion sirve para mostrar las opciones para poder registrar un consumo de agua o modificar, 
 		ademas en ella estan contenidas las otras funciones correspondientes a las opciones del men*/
 		clear = cin.get();
 		fflush(stdin);
+		system("pause>null");
 }
 
 	}

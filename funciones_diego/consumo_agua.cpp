@@ -10,7 +10,7 @@
 #include "../funciones_Christian/costo.cpp"
 
 using namespace std;
-void consumo_agua(int posicion, char c_usuario[10],register_anual * registro_user,char nombres[N][100],char mes [1])
+void consumo_agua(int& posicion, char c_usuario[10],register_anual * registro_user,char nombres[N][100],char mes [1])
 /*en esta funcion se pide los datos para establecer el consumo al cliente que se ingreso*/
 {
 	int mes_n= atoi(mes);

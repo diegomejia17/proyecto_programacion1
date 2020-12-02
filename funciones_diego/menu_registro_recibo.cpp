@@ -1,3 +1,4 @@
+#include "validar_correlativo.h"	
 #include "menu_registro_recibo.h"	//archivo que contiene la definicion de la funcion
 #include <iostream>
 #include <stdlib.h>
@@ -9,7 +10,7 @@
 #include "../funciones_francisco/Interfaz.h"
 
 using namespace std;
-void menu_registro_recibo(int posicion, char c_usuario[10],register_anual * registro_user,char nombres[N][100],char mes [1])
+void menu_registro_recibo(char numero_cuenta[N][10], int& posicion, char c_usuario[10],register_anual * registro_user,char nombres[N][100],char mes [1])
 {
 	int opcionnumber;
 	char opcionletra[1];	
@@ -18,7 +19,8 @@ void menu_registro_recibo(int posicion, char c_usuario[10],register_anual * regi
 	do
 	{
 		do
-		{	system("cls");
+		{	verificar_registo_resibos(numero_cuenta,c_usuario,posicion);
+			system("cls");
 			interfaz(1, 27, 1, 80);
             interfaz(2, 26, 2, 79);
 			color(1);

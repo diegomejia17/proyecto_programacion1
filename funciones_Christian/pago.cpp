@@ -11,20 +11,19 @@
 
 using namespace std;
 
-void pago(char Numero_cuenta[N][10],register_anual * registro_user, int i)
+void pago(char Numero_cuenta[N][10],register_anual * registro_user, int& i)
     {
             char c_usuario[1];
             int posicion = 0;
             float total = 0;
             float efectivo = 0;
-            int c_usua;
             char clear;
 	        bool exito = false;
             int s = 0;
             int vuelto = 0;
             system("cls");
 
-        //do{
+        do{
             interfaz(1, 27, 1, 80);
             interfaz(2, 26, 2, 79);
             color(1);
@@ -34,24 +33,14 @@ void pago(char Numero_cuenta[N][10],register_anual * registro_user, int i)
             color (0);
             gotoxy(20,14);cout << "presione cero si desea salir " << endl;
             gotoxy(20,8);gets(c_usuario);
-            c_usua = atoi(c_usuario);//pasar de char a int
-            system("cls");
-            for ( int a = 0; a < i; a++)
-                    {
-                        if ((strcmp (Numero_cuenta[a],c_usuario))==0)//condicional que regula el acceso al menu de registro recibos
-                        {
-                            posicion = a;
-                        }
-                    }
      
-	/*if (verificar_registo_resibos(Numero_cuenta,c_usuario,posicion)==false && c_usuario[0]!= 48)
+	if (verificar_registo_resibos(Numero_cuenta,c_usuario,posicion)==false )
 		{
-			exito = false;
 			color(2);
 			gotoxy(20,18);cout <<"DATO INGRESADO INVALIDO"<<endl;
 			color (0);
 			system("pause>null");
-			system("cls");
+            system("cls");
 		}
 		else
 		{
@@ -60,7 +49,10 @@ void pago(char Numero_cuenta[N][10],register_anual * registro_user, int i)
 		}
 		clear = cin.get();
 		fflush(stdin);
-    }while( exito == false );*/
+    }while( exito == false );
+
+
+
         do{
             if (exito==true)
             {

@@ -6,7 +6,7 @@
 #include "../funciones_francisco/Interfaz.h"
 
 
-void modificar_c_agua (int posicion, char c_usuario[10],register_anual * registro_user,char nombres[N][100], char mes[1])
+void modificar_c_agua (int& posicion, char c_usuario[10],register_anual * registro_user,char nombres[N][100], char mes[1])
 /* 
 esta funcion sirve para modificar el registro del consumo del agua por si se llega a ingresar un dato erroneo
 */
