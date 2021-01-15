@@ -1,3 +1,4 @@
-#ifndef N
+#ifndef __CONSTANTE__H__
+#define __CONSTANTE__H__
 #define N 100
-#endif
+#endif  //!__CONSTANTE__H__

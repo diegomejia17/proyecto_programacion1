@@ -1,9 +1,11 @@
 #include "validar_numeros.h"
+#include "../constante.h"
 #include <string.h>
- const  int P = 100;
-using namespace std;
-/*---------------------------------------FUNCION PARA VALIDAR NUMERO---------------------------------------------*/
-int ValidarNumeros(char Nu[P][11], int& i)
+#include <iostream>
+#include <stdlib.h>
+ 
+
+int ValidarNumeros(char Nu[N][11], int& i)
         {
                 int j = 0;
                 char c ;
@@ -19,3 +21,4 @@ int ValidarNumeros(char Nu[P][11], int& i)
                                         }
                         }
         }
+

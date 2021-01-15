@@ -2,7 +2,8 @@
 #include<stdlib.h>
 #include<string.h>
 #include<windows.h>
-#include "funciones_francisco/menu_registro_usuario.cpp"
+
+#include "./funciones_francisco/menu_registro_usuario.cpp"
 #include "funciones_diego/registro_recibo.cpp"
 #include "constante.h"
 #include "funciones_diego/estructura_r_r.h"
@@ -27,7 +28,7 @@ int main()
         int opccion;
         char opccion1[1];
         char c;
-
+        
         do{
                 
                 do{
@@ -80,6 +81,8 @@ int main()
                                          interfaz(14, 17, 49, 62);
                                         gotoxy(31,16);cout<<"Vuelva pronto!!";    
                                 }break;
+
+                        
 
                 }   
       
