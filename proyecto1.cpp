@@ -24,6 +24,7 @@ int main()
         register_anual * registro_user = new register_anual[N];
         llenando(registro_user);   //esta funcion llena la matriz de la estructura con ceros
         char Nombres[N][100] = {"\0"}, Apellidos[N][100] = {"\0"};
+        char Mes[N][11];
         char  Numero_cuenta[N][10] = {"\0"}, anio[N][11] = {"\0"}, Dui[N][11] = {"\0"};
         int opccion;
         char opccion1[1];
@@ -56,7 +57,7 @@ int main()
 
                         case 1: 
                                 {
-                                        Menu_Registros_usuarios(Nombres, Apellidos, Dui, Numero_cuenta, anio, i);//agregar modificar y eliminar los usuarios
+                                        Menu_Registros_usuarios(Nombres, Apellidos, Dui, Numero_cuenta, anio, i, Mes);//agregar modificar y eliminar los usuarios
                                         system("Cls");
                                 } break;
                         case 2: 
