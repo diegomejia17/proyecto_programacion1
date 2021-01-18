@@ -16,10 +16,10 @@ void editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char 
 {
     
 
-    char name_aux[100],dui_aux[11],Pcorrelativo[10],anio_aux[11];
+    char name_aux[100],dui_aux[11] = {"\0"},Pcorrelativo[10]  = {"\0"},anio_aux[11]  = {"\0"};
     //variables auxiliares 
     
-    int posicion = 0;
+    int posicion;
     bool exito = false;
     char clear;
     do
