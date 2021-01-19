@@ -22,17 +22,25 @@ void editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char 
     int posicion;
     bool exito = false;
     char clear;
+   
     do
     //se verifica que el numero correlativo que se esta ingresando coincida con uno existente
     {
-        imprimir("ingrese el numero correlativo del usuario a editar");
-        cin >> Pcorrelativo;
+         interfaz(1, 27, 1, 80);
+        interfaz(2, 26, 2, 79);
+        gotoxy(27,2);cout<<"\x1b[1;34mMODIFICAR REGISTRO DE USUARIO\033[0m"<<endl;
+        gotoxy(5,6);imprimir("ingrese el correlativo: ");
+        gotoxy(20, 14);
+        cout << "presione cero si desea salir " << endl;
+        gotoxy(5,8);cin >> Pcorrelativo;
         clear = cin.get();
         fflush (stdin);
         if (verificar_registo_resibos(Numero_cuenta,Pcorrelativo,posicion) == false && Pcorrelativo[0] != 48)
         {
-            imprimir("DATO INGRESADO INCORRECTO");
+            gotoxy(13,16);cout<<"\033[1m                                                        \033[0m";
+            gotoxy(31,25);imprimir( "\x1b[41;37m* DATO INGRESADO INCORRECTO * \033[0m");
             limpiar();
+
         }
         else
         {
@@ -49,18 +57,19 @@ void editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char 
 
     do
     {
-        imprimir("EDITAR USUARIO ");
-        imprimir("Seleccione una opcion: ");
-        imprimir("1.  cambiar nombres.");
-        imprimir("2.  cambiar apellidos.");
-        imprimir("3.  cambiar numero de dui.");
-        imprimir("4.  cambiar anio de registro.");
-        imprimir("si desea salir precione 0.");
+        interfaz(1, 27, 1, 80);
+        interfaz(2, 26, 2, 79);
+        gotoxy(27,2);cout<<"\x1b[1;34mMODIFICAR REGISTRO DE USUARIO\033[0m"<<endl;
+        gotoxy(5,6);imprimir("Seleccione una opcion: ");
+        gotoxy(5,8);imprimir("1.  cambiar nombres.");
+        gotoxy(5,10);imprimir("2.  cambiar apellidos.");
+        gotoxy(5,12);imprimir("3.  cambiar numero de dui.");
+        gotoxy(5,14);imprimir("0.  Salir.");
 
-        cin >> menu;
+        gotoxy(5,16);cin >> menu;
         fflush(stdin);
         op = atoi(menu);
-
+        
         switch (op)
         {
         case 0:
@@ -71,15 +80,18 @@ void editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char 
             do
             //ciclo que evalua el cambio del nombre.
             {
-                cout << "el nombre anterior es: " << Nombres[posicion] << endl;
-                cout << " digite el nuevo nombre:  ";
-                cin.getline(name_aux, 100, '\n');
+                limpiar();
+                interfaz(1, 27, 1, 80);
+                interfaz(2, 26, 2, 79);
+                gotoxy(27,2);cout<<"\x1b[1;34mMODIFICANDO NOMBRE DEL USUARIO\033[0m"<<endl;
+                gotoxy(5,6);cout << "el nombre anterior es: \x1b[1;34m" << Nombres[posicion] << endl;
+                gotoxy(5,8);cout << "\033[0mdigite el nuevo nombre:  \x1b[1;34m";
+                gotoxy(30,8);cin.getline(name_aux, 100, '\n');
                 fflush(stdin);
-                system("cls");
             } while (!ValidarLetras2(name_aux));
-
+            interfaz(14, 17, 49, 62);
             strcpy( Nombres[posicion],name_aux); //copia a la matriz principal la modificacion del nombre..
-            imprimir("nombre sustituido con exito");
+            gotoxy(20,16);imprimir("\033[32mnombre sustituido con exito\033[0m");
             limpiar();
             break;
 
@@ -87,16 +99,19 @@ void editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char 
             do
             //ciclo que evalua el cambio del apellido.
             {
-                cout << "los apellidos anteriores son: " << Apellidos[posicion] << endl;
-                cout << " digite el nuevo apellido:  ";
-                cin.getline(name_aux, 100, '\n');
+                limpiar();
+                interfaz(1, 27, 1, 80);
+                interfaz(2, 26, 2, 79);
+                gotoxy(27,2);cout<<"\x1b[1;34mMODIFICANDO APELLIDO DEL USUARIO\033[0m"<<endl;
+                 gotoxy(5,6);cout << "los apellidos anteriores son: \x1b[1;34m" << Apellidos[posicion] << endl;
+                 gotoxy(5,8);cout << "\033[0mdigite el nuevo apellido:  \x1b[1;34m";
+                gotoxy(31,8);cin.getline(name_aux, 100, '\n');
                 fflush(stdin);
-                system("cls");
 
             } while (!ValidarLetras2(name_aux));
-
+            interfaz(14, 17, 49, 62);
             strcpy( Apellidos[posicion], name_aux); //copia a la matriz principal la modificacion del apellido..
-            imprimir("apellido sustituido con exito");
+            gotoxy(20,16);imprimir("\033[32mapellido sustituido con exito\033[0m");
             limpiar();
             break;
 
@@ -105,35 +120,25 @@ void editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char 
             do
             //ciclo que evalua el cambio del dui
             {
-                cout << "el numero de dui anterior es: " << Dui[posicion] << endl;
-                imprimirS("ingrese el nuevo numero: ");
-                cin>> dui_aux;
+                limpiar();
+                interfaz(1, 27, 1, 80);
+                interfaz(2, 26, 2, 79);
+                gotoxy(27,2);cout<<"\x1b[1;34mMODIFICANDO DUI DEL USUARIO\033[0m"<<endl;
+                 gotoxy(5,6);cout << "el numero de dui anterior es: \x1b[1;34m" << Dui[posicion] << endl;
+                gotoxy(5,8);imprimirS("\033[0mingrese el nuevo numero: \x1b[1;34m");
+                gotoxy(30,8);cin>> dui_aux;
                 clear = cin.get();
+                if(strlen(Dui[i]) <9 || strlen(Dui[i]) >9)
+                    {
+                        gotoxy(20,25);cout<<"\x1b[41;37m* Debe de ingresar 9 digitos * \033[0m"<<endl; 
+                        system("pause>null");
+                        gotoxy(20,25);cout<<"\033[1m                                       \033[0m";
+                    }
                 fflush(stdin);
-                system("cls");
             } while (validarNumeros2(dui_aux) == 0 || validar_dui2(Dui, i, dui_aux) == false  || strlen(dui_aux) < 9 || strlen(dui_aux) > 9);
-
+            interfaz(14, 17, 49, 62);
             strcpy( Dui[posicion],dui_aux); //copia a la matriz principal la modificacion del dui..
-            imprimir("dui sustituido con exito");
-            limpiar();
-            break;
-
-        case 4:
-            //ciclo que evalua editar correctamente el año de registro.
-            do
-            {
-                cout << "el anio anterior es: " << anio[posicion] << endl;
-                cin>>anio_aux;
-
-                clear = cin.get();
-                fflush(stdin);
-                system("cls");
-
-            } while (validarNumeros2(anio_aux) == false || strlen(anio_aux) > 4 ||  strlen(anio_aux) < 4);
-
-            strcpy( anio[posicion], anio_aux); //copia a la matriz principal la modificacion del anio..
-            Numero_correlativo(Numero_cuenta, anio, posicion);
-            imprimir("anio sustituido con exito");
+            gotoxy(20,16);imprimir("\033[32mDui sustituido con exito\033[0m");
             limpiar();
             break;
 

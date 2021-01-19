@@ -8,27 +8,44 @@ void E_ditar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char
         {
 //ordenar la
        
-                
-                gotoxy(0,0);
-                cout<<"Numero de cuenta";
-                gotoxy(20,0);
-                cout<<"Nombre";
-                gotoxy(35,0);
-                cout<<"Apellido";
-                gotoxy(55,0);
-                cout<<"Dui"<<endl;
+                interfaz(1, 27, 1, 80);
+                interfaz(2, 26, 2, 79);
+                gotoxy(27,2);cout<<"\x1b[1;34mTABLA DE USUARIOS\033[0m"<<endl;   
+                gotoxy(24,4);cout << "|";            
+                gotoxy(6,4);cout<<"\x1b[1;34mNumero de cuenta\033[0m";
+
+                gotoxy(39,4);cout << "|";
+                gotoxy(26,4);cout<<"\x1b[1;34mNombre\033[0m";
+
+                gotoxy(59,4);cout << "|";
+                gotoxy(41,4);cout<<"\x1b[1;34mApellido\033[0m";
+
+                gotoxy(61,4);cout<<"\x1b[1;34mDui\033[0m"<<endl;
                 cout<<"\n";
+                gotoxy(6,5);cout << "________________________________________________________________";
                 for(int j = 0; j < i; j++)
                    {
-                        gotoxy(0,j+1);
-                        cout<<Numero_cuenta[j];
-                        gotoxy(20,j+1);
-                        cout<<Nombres[j];
-                        gotoxy(35,j+1);
-                        cout<<Apellidos[j];
-                        gotoxy(55,j+1);
-                        cout<<Dui[j];                                  
+
+                        int a = 6;
+                        gotoxy(24,a+j);cout << "|";
+                        gotoxy(24,a+j+1);cout << "|"; 
+                        gotoxy(6,j+a);cout<<Numero_cuenta[j];
+                        
+                        gotoxy(39,a+j);cout << "|";
+                        gotoxy(39,a+j+1);cout << "|";
+                        gotoxy(26,j+a);cout<<Nombres[j];
+
+                        gotoxy(59,a+j);cout << "|";
+                        gotoxy(59,a+j+1);cout << "|"; 
+                        gotoxy(41,j+a);cout<<Apellidos[j];
+
+                        gotoxy(61,j+a);cout<<Dui[j];                                  
                    }
+                   if(i == 0)   
+                        {
+                                 gotoxy(22,6);cout<<"No se encontraron registros";
+                        }
+                gotoxy(6,i+7);cout << "_________________________________________________________________";
                 system("pause>null");
                 system("Cls");
         }

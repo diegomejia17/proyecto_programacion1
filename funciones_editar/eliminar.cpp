@@ -25,9 +25,12 @@ void eliminar (char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], ch
         interfaz(2, 26, 2, 79);
         gotoxy(27,2);cout<<"\x1b[1;34mELIMINAR REGISTRO DE USUARIO\033[0m"<<endl;
         gotoxy(5,6);cout<<"Ingresa el correlativo: "<<endl;
+        gotoxy(20, 14);
+		cout << "presione cero si desea salir " << endl;
         gotoxy(5,8);cin >> Pcorrelativo;
         clear = cin.get();
         fflush (stdin);
+        
         if (verificar_registo_resibos(Numero_cuenta,Pcorrelativo,posicion) == false && Pcorrelativo[0] != 48)
         {
             gotoxy(31,25);imprimir("\x1b[41;37m* DATO INGRESADO INCORRECTO *\033[0m");
@@ -37,7 +40,7 @@ void eliminar (char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], ch
         else
         {
             exito = true;
-           // limpiar();
+            limpiar();
         }
         
 
@@ -84,7 +87,6 @@ void eliminar (char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], ch
        strcpy(anio[a],anio[a+1]);
        strcpy(Numero_cuenta[a],Numero_cuenta[a+1]);
     }
-
      char aux[70];
         int posicion2 = i;
         for(int j = posicion2; j < 0 -1; j--)
