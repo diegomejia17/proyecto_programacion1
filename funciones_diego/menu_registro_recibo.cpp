@@ -10,7 +10,7 @@
 #include "../funciones_francisco/Interfaz.h"
 
 using namespace std;
-void menu_registro_recibo(char numero_cuenta[N][10], int& posicion, char c_usuario[10],register_anual * registro_user,char nombres[N][100],char mes [1])
+void menu_registro_recibo(char numero_cuenta[N][10], int& posicion, char c_usuario[10],register_anual * registro_user,char nombres[N][100],char Mes[N][11])
 {
 	int opcionnumber;
 	char opcionletra[1];	
@@ -52,12 +52,12 @@ void menu_registro_recibo(char numero_cuenta[N][10], int& posicion, char c_usuar
 		{
 		case 1:
 			system ("cls");
-			consumo_agua( posicion,  c_usuario, registro_user, nombres,mes );
+			consumo_agua( posicion,  c_usuario, registro_user, nombres,Mes );
 			//funcion contenida en uno de los archivos llamados 
 			break;
 		case 2:
 			system ("cls");
-			modificar_c_agua(posicion,  c_usuario, registro_user, nombres,mes);
+			modificar_c_agua(posicion,  c_usuario, registro_user, nombres,Mes);
 			//funcion contenida en uno de los archivos llamados
 			
 		case 3 : 

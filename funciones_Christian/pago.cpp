@@ -60,7 +60,7 @@ void pago(char Numero_cuenta[N][10], register_anual *registro_user, int &i)
     {
         if (exito == true)
         {
-            for (int j = 1; j <= 12; j++)
+            for (int j = 0; j <= 11; j++)
             {
                 interfaz(1, 27, 1, 80);
                 interfaz(2, 26, 2, 79);
@@ -68,8 +68,8 @@ void pago(char Numero_cuenta[N][10], register_anual *registro_user, int &i)
                 gotoxy(27, 2);
                 cout << "REGISTRO DE PAGO DE AGUA" << endl;
                 color(1);
-                // 0 = no a pagado y 1 = ya pago
-                if ((registro_user[posicion].registro_anual[4][j] == 0) && (registro_user[posicion].registro_anual[3][j] > 0))
+                // -1 = no a pagado y 1 = ya pago
+                if ((registro_user[posicion].registro_anual[4][j] == -1) && (registro_user[posicion].registro_anual[3][j] > 0))
                 {
                     gotoxy(21, 5 + s);
                     cout << "Consumo de m3: " << fixed << setprecision(2) << registro_user[posicion].registro_anual[2][j] << "   costo a pagar: $" << fixed << setprecision(2) << registro_user[posicion].registro_anual[3][j];
