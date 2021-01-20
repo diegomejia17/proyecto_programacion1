@@ -69,7 +69,7 @@ int main()
 
                 case 1:
                 {
-                        Menu_Registros_usuarios(Nombres, Apellidos, Dui, Numero_cuenta, anio, i, Mes); //agregar modificar y eliminar los usuarios
+                        Menu_Registros_usuarios(Nombres, Apellidos, Dui, Numero_cuenta, anio, i, Mes, registro_user); //agregar modificar y eliminar los usuarios
                         system("Cls");
                 }
                 break;
@@ -185,7 +185,7 @@ int main()
                                                         gotoxy(63, g + 5);
                                                         cout << "Pendiente" << endl; //verde
                                                 }
-                                                else
+                                                if (registro_user[g].registro_anual[4][opc4 - 1] == 1)
                                                 {
                                                         gotoxy(63, g + 5);
                                                         cout << "Saldo cancelado" << endl; //verde
@@ -213,8 +213,7 @@ int main()
                         system("pause>=null");
                         system("cls");
                 }
-                break;
-                case 5:
+                break;                case 5:
                 {
                         interfaz(1, 27, 1, 80);
                         interfaz(2, 26, 2, 79);

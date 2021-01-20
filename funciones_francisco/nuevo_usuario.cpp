@@ -90,5 +90,7 @@ void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char
 
                         system("Cls");
                         //numero correlativo
+               
+
                                                                  
         }

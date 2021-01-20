@@ -10,7 +10,7 @@
 #include "../funciones_francisco/Interfaz.h"
 
 
-void eliminar (char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int& i)
+void eliminar (char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int& i,register_anual * registro_user, char Mes[N][11])
 {
     
 
@@ -40,7 +40,6 @@ void eliminar (char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], ch
         else
         {
             exito = true;
-            limpiar();
         }
         
 
@@ -86,35 +85,16 @@ void eliminar (char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], ch
        strcpy(Dui[a],Dui[a+1]);
        strcpy(anio[a],anio[a+1]);
        strcpy(Numero_cuenta[a],Numero_cuenta[a+1]);
+       strcpy(Mes[a],Mes[a+1]);
+      registro_user[a].registro_anual[1][0] = 2;
+      registro_user[a].registro_anual[2][0] = 2;
+      registro_user[a].registro_anual[3][0] = 2;
+      registro_user[a].registro_anual[4][0] = 2;
+      /*registro_user[a].registro_anual[1][0] = registro_user[a+1].registro_anual[4][0];
+      registro_user[a].registro_anual[2][0] = registro_user[a+1].registro_anual[4][0];
+      registro_user[a].registro_anual[3][0] = registro_user[a+1].registro_anual[4][0];
+      registro_user[a].registro_anual[4][0] = registro_user[a+1].registro_anual[4][0];*/
+
     }
-     char aux[70];
-        int posicion2 = i;
-        for(int j = posicion2; j < 0 -1; j--)
-                    { 
-                        for(int i = posicion2; i < 0 - (j-1); i--)
-                            {
-                                if(strcmp(Nombres[i],Nombres[i-1]) >= 0);
-                                    {//comparamos cadenas con strcmp
-
-                                        strcpy(aux,Numero_cuenta[i]);
-                                        strcpy(Numero_cuenta[i],Numero_cuenta[i-1]);
-                                        strcpy(Numero_cuenta[i-1],aux);
-
-                                        strcpy(aux,Nombres[i]);
-                                        strcpy(Nombres[i],Nombres[i-1]);
-                                        strcpy(Nombres[i-1],aux);
-
-                                        strcpy(aux,Apellidos[i]);
-                                        strcpy(Apellidos[i],Apellidos[i-1]);
-                                        strcpy(Apellidos[i-1],aux);
-
-                                        strcpy(aux,Dui[i]);
-                                        strcpy(Dui[i],Dui[i-1]);
-                                        strcpy(Dui[i-1],aux);
-
-
-                                    }
-                            }
-                    }
-   
+       
 }

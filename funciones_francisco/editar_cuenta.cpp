@@ -2,11 +2,19 @@
 #include <iostream>
 #include "gotoxy.cpp"
 #include "editar_cuenta.h"
+#include <string.h>
+#include <stdlib.h>
 using namespace std;
 /*---------------------------------------FUNCION PARA EDITAR CUENTA---------------------------------------------*/
 void E_ditar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int& i)
         {
-//ordenar la
+                                                strcpy(Nombres[i],Nombres[i+1]);
+                                                strcpy(Apellidos[i],Apellidos[i+1]);
+                                                strcpy(Dui[i],Dui[i+1]);
+                                                strcpy(anio[i],anio[i+1]);
+                                                strcpy(Numero_cuenta[i],Numero_cuenta[i+1]);
+
+//mostrar
        
                 interfaz(1, 27, 1, 80);
                 interfaz(2, 26, 2, 79);
@@ -22,7 +30,8 @@ void E_ditar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char
 
                 gotoxy(61,4);cout<<"\x1b[1;34mDui\033[0m"<<endl;
                 cout<<"\n";
-                gotoxy(6,5);cout << "________________________________________________________________";
+                gotoxy(6,5);cout << "________________________________________________________________";                                        
+                        
                 for(int j = 0; j < i; j++)
                    {
 
