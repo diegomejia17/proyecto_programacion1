@@ -6,9 +6,10 @@
 #include "editar_cuenta.cpp"
 #include "../funciones_editar/editar.cpp"
 #include "../funciones_editar/eliminar.cpp"
+#include "../funciones_diego/estructura_r_r.h"
 using namespace std;
 /*---------------------------------------FUNCION MENU DE REGISTROS DE LOS USUARIOS---------------------------------------------*/
-void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int& i, char Mes[N][11])//funcion para agregar modificar y eliminar los usuarios
+void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int& i, char Mes[N][11],register_anual * registro_user)//funcion para agregar modificar y eliminar los usuarios
     { 
             int Opc_Registro;
             char Opc[1];
@@ -50,7 +51,7 @@ void Menu_Registros_usuarios(char Nombres[N][100], char Apellidos[N][100], char 
                                         }break;
                                 case 3:
                                         {
-                                                eliminar(Nombres, Apellidos, Dui,Numero_cuenta ,anio,i);
+                                                eliminar(Nombres, Apellidos, Dui,Numero_cuenta ,anio,i, registro_user,Mes);
                                         }break;
                                 case 4:
                                         {
