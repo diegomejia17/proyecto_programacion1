@@ -86,9 +86,10 @@ void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char
                 cout << "\033[1m                                                  \033[0m";
                 gotoxy(5, 14);
                 cout << "Elige el numero que corresponde a el mes: ";
-
+                
+                fflush(stdin);
                 gets(Mes[i]);
-                mes = atoi(Mes[i]); //de caracter a entero
+                mes = atoi(Mes[i]); //de caracter a entero 
                 fflush(stdin);
                 if ((strlen(Mes[i]) < 0 || strlen(Mes[i]) > 3))
                 {
@@ -98,15 +99,16 @@ void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char
                         gotoxy(20, 25);
                         cout << "\033[1m                                        \033[0m";
                 }
-                if ((mes <= 0 || mes >= 13))
+                if (mes <= 0 || mes >= 13)
                 {
                         gotoxy(20, 25);
                         cout << "\x1b[41;37m* Debe de ingresar numeros entre 1 y 12 *\033[0m" << endl;
                         system("pause>null");
                         gotoxy(20, 25);
                         cout << "\033[1m                                                     \033[0m";
+                } else {
+                 mes = mes;
                 }
-                mes = mes -1;
         } while ((ValidarNumeros(Mes, i) == false || (strlen(Mes[i]) < 0 || strlen(Mes[i]) > 3)) || (mes <= 0 || mes >= 13));
 
         do

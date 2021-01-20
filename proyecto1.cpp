@@ -10,6 +10,7 @@
 #include "funciones_diego/llenado.cpp"
 #include "funciones_francisco/Interfaz.h"
 #include "funciones_Christian/pago.cpp"
+#include "void_gerson/case_4.cpp"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ int main()
 {
 
         //interfaz(1, 20, 1, 61);
-        system("mode con: cols=82 lines=30"); //dar tamaño a la pantalla//dar tamaño a la pantalla
+        system("mode con: cols=82 lines=30"); //dar tamaño a la pantalla
         SetConsoleTitle("CONTROL DE RECIBO DE AGUA");
         register_anual *registro_user = new register_anual[N];
         llenando(registro_user); //esta funcion llena la matriz de la estructura con ceros
@@ -29,8 +30,9 @@ int main()
         int opccion;
         char opccion1[1];
         char c;
-        string meses[12] = {{"Enero"}, {"Febrero"}, {"Marzo"}, {"Abril"}, {"Mayo"}, {"Junio"}, {"Julio"}, {"Agosto"}, {"Septiembre"}, {"Octubre"}, {"Noviembre"}, {"Diciembre"}};
-        int anio_system = 2021;
+        //string meses[12] = {{"Enero"}, {"Febrero"}, {"Marzo"}, {"Abril"}, {"Mayo"}, {"Junio"}, {"Julio"}, {"Agosto"}, {"Septiembre"}, {"Octubre"}, {"Noviembre"}, {"Diciembre"}};
+        char meses[12][20] = {{"Enero"}, {"Febrero"}, {"Marzo"}, {"Abril"}, {"Mayo"}, {"Junio"}, {"Julio"}, {"Agosto"}, {"Septiembre"}, {"Octubre"}, {"Noviembre"}, {"Diciembre"}};
+
 
         do
         {
@@ -87,133 +89,11 @@ int main()
                 break;
                 case 4:
                 {
-
-                        char opc4c[2];
-                        int opc4;
-                        system("cls");
-                        interfaz(1, 27, 1, 80);
-                        interfaz(2, 26, 2, 79);
-                        gotoxy(30, 2);
-                        cout << "\x1b[1;34mINFORME DE PAGOS\033[0m" << endl;
-                        interfaz(14, 17, 49, 62);
-
-                        if (anio[0][0] == 0)
-                        {
-                                gotoxy(30, 4);
-                                cout << "No hay datos almacenados" << endl;
-                        }
-                        else
-                        {
-
-                                gotoxy(39, 4);
-                                cout << anio_system << endl;
-                                gotoxy(5, 5);
-                                cout << "Seleccione el mes para ver historial de pagos/deudas" << endl;
-
-                                for (int b = 0; b < 12; b++)
-                                {
-                                        gotoxy(5, 6 + b);
-                                        cout << b + 1 << "-" << meses[b] << endl;
-                                }
-
-                                gotoxy(5, 25);
-                                cout << "Mes: ";
-                                do
-                                {
-                                        gotoxy(10, 25);
-                                        gets(opc4c);
-                                        opc4 = atoi(opc4c);
-                                } while ((opc4 >= 13) || (opc4 <= 0));
-
-                                system("cls");
-                                interfaz(1, 27, 1, 80);
-                                interfaz(2, 26, 2, 79);
-                                gotoxy(30, 2);
-                                cout << "\x1b[1;34mINFORME DE PAGOS\033[0m" << endl;
-                                interfaz(14, 17, 49, 62);
-                                gotoxy(33, 3);
-                                cout << meses[opc4 - 1] << endl;
-                                gotoxy(45, 3);
-                                cout << anio_system << endl;
-
-                                gotoxy(8, 4);
-                                cout << "Nombre(s)";
-                                gotoxy(25, 4);
-                                cout << "Apellido(s)";
-                                gotoxy(45, 4);
-                                cout << "No. Cuenta";
-                                gotoxy(61, 4);
-                                cout << "Estado Actual";
-
-                                for (int g = 0; g < i; g++)
-                                {
-                                        gotoxy(8, g + 5);
-                                        cout << Nombres[g] << endl;
-                                        gotoxy(25, g + 5);
-                                        cout << Apellidos[g] << endl;
-                                        gotoxy(45, g + 5);
-                                        cout << Numero_cuenta[g] << endl;
-
-                                        if (opc4 - 1 >= 1)
-                                        { //si g>=1
-
-                                                if (registro_user[g].registro_anual[4][opc4 - 1] == 0 && registro_user[g].registro_anual[4][opc4 - 2] == 0)
-                                                {
-                                                        gotoxy(63, g + 5);
-                                                        cout << "2 meses sin pagar" << endl; //en rojo
-                                                }
-                                                else if ((registro_user[g].registro_anual[4][opc4 - 2] == 0 && registro_user[g].registro_anual[4][opc4 - 1] == 1) || (registro_user[g].registro_anual[4][opc4 - 2] == 0))
-                                                {
-                                                        gotoxy(63, g + 5);
-                                                        cout << "1 mes sin pagar" << endl; //en amarillo
-                                                }
-                                                else if (registro_user[g].registro_anual[4][opc4 - 2] == 1 && registro_user[g].registro_anual[4][opc4 - 1] == 0)
-                                                {
-                                                        gotoxy(63, g + 5);
-                                                        cout << "Pendienteeeee" << endl; //verde
-                                                }
-                                                else if (registro_user[g].registro_anual[4][opc4 - 1] == 1 && registro_user[g].registro_anual[4][opc4 - 2] == 1)
-                                                { /////////////////////////////////////////////////////////////////7
-                                                        gotoxy(63, g + 5);
-                                                        cout << "Saldo canceladooooo " << registro_user[g].registro_anual[4][opc4 - 1] << endl; //verde////////////////////////////////////////////////////////////77/77
-                                                }
-                                        }
-                                        else
-                                        { //si g==0
-                                                if (registro_user[g].registro_anual[4][opc4 - 1] == 0)
-                                                {
-                                                        gotoxy(63, g + 5);
-                                                        cout << "Pendiente" << endl; //verde
-                                                }
-                                                if (registro_user[g].registro_anual[4][opc4 - 1] == 1)
-                                                {
-                                                        gotoxy(63, g + 5);
-                                                        cout << "Saldo cancelado" << endl; //verde
-                                                }
-                                        } //fin de condicional dependiente del valor de g
-
-                                } //Fin for (impresion)
-
-                        } //fin else inicial
-
-                        for (int h = 0; h < 20; h++)
-                        {
-                                for (int i = 0; i < 3; i++)
-                                {
-                                        for (int j = 0; j < 12; j++)
-                                        {
-                                                gotoxy(3, 25);
-                                                cout << registro_user[h].registro_anual[i][j];
-                                        }
-                                        cout << "\n"
-                                             << endl;
-                                }
-                        }
-
-                        system("pause>=null");
+                        case_4(registro_user, Nombres, Apellidos, anio, meses, Numero_cuenta, i);
                         system("cls");
                 }
-                break;                case 5:
+                break;
+                case 5:
                 {
                         interfaz(1, 27, 1, 80);
                         interfaz(2, 26, 2, 79);

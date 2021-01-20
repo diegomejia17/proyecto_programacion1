@@ -1,4 +1,4 @@
-#ifndef _pago__h 
+#ifndef _pago__h
 #define _pago__h 
 #include <Windows.h>
 #include <iostream>

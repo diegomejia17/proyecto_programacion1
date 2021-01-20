@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
-#include <strings.h>
+#include <strings.h> 
 #include "../funciones_francisco/Interfaz.h"
 #include "../funciones_francisco/gotoxy.h"
 #include "../funciones_diego/colores.h"
