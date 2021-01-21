@@ -22,7 +22,7 @@ void consumo_agua(int &posicion, char c_usuario[10], register_anual *registro_us
 
 	strcpy(Mes[posicion],aux);
 
-	cout <<Mes[posicion]<<"aqui...";
+	
 
 	mes_n = mes_n - 1;
 
@@ -135,7 +135,7 @@ void consumo_agua(int &posicion, char c_usuario[10], register_anual *registro_us
 						cout << "registro exitoso" << endl;
 						gotoxy(8, 14);
 
-						cout << "El consumo del mes es de: " << registro_user[posicion].registro_anual[2][mes_n] << " " << registro_user[posicion].registro_anual[3][mes_n]<<"aquiii"<<endl;
+						cout << "El consumo del mes es de: " << registro_user[posicion].registro_anual[2][mes_n] <<endl;
 						color(0);
 						system("pause>0");
 						system("cls");

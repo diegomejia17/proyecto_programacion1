@@ -40,7 +40,7 @@ esta funcion sirve para modificar el registro del consumo del agua por si se lle
 				gotoxy(8, 6);
 				cout << "Nombre: " << nombres[posicion] << endl;
 				gotoxy(8, 8);
-				cout << "Mes:  " << mes_n << endl;
+				cout << "Mes:  " << mes_n +1 << endl;
 				gotoxy(8, 10);
 				cout << "Registro anterior:  " << registro_user[posicion].registro_anual[1][mes_n] << endl;
 				gotoxy(8, 12);
