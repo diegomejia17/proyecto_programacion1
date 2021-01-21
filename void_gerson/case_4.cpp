@@ -93,7 +93,7 @@ void case_4(register_anual * registro_user, char Nombres[N][100], char Apellidos
                     gotoxy(60, g + 5);
                     cout << "2 meses sin pagar" << endl;
                 }
-                else if (registro_user[g].registro_anual[4][opc4 - 2] == 1 && registro_user[g].registro_anual[4][opc4 - 1] == 0)
+                else if (registro_user[g].registro_anual[4][opc4 - 2] == -1 && registro_user[g].registro_anual[4][opc4 - 1] == 0)
                 {
                     gotoxy(63, g + 5);
                     cout << "Pendiente" << endl;
