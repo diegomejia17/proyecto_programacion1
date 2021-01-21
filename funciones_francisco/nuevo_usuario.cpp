@@ -83,7 +83,7 @@ void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char
                 gotoxy(60, 12);
                 cout << "12. Diciembre: \033[0m";
                 gotoxy(5, 14);
-                cout << "\033[1m                                                  \033[0m";
+                cout << "\033[1m                                                                    \033[0m";
                 gotoxy(5, 14);
                 cout << "Elige el numero que corresponde a el mes: ";
                 
@@ -127,7 +127,12 @@ void Guardar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char
                         cout << "\033[1m                                       \033[0m";
                 }
         } while ((ValidarNumeros(Dui, i) == false) || (strlen(Dui[i]) < 9 || strlen(Dui[i]) > 9) || (validar_dui(Dui, i) == 0));
-
+        char Dui1[1];
+        strcpy(Dui1,Dui[i]);
+        strcpy(Dui[i],"\0");
+        strncat(Dui[i],Dui1,8);
+        strcat(Dui[i],"-");
+        strrev(Dui1);
+        strncat(Dui[i],Dui1,1);
         system("Cls");
-        //numero correlativo
 }

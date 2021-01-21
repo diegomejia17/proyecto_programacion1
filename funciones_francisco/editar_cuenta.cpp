@@ -28,7 +28,7 @@ void E_ditar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char
                 gotoxy(59,4);cout << "|";
                 gotoxy(41,4);cout<<"\x1b[1;34mApellido\033[0m";
 
-                gotoxy(61,4);cout<<"\x1b[1;34mDui\033[0m"<<endl;
+                gotoxy(61,4);cout<<"\x1b[1;34mDui\033[0m"<<endl;               
                 cout<<"\n";
                 gotoxy(6,5);cout << "________________________________________________________________";                                        
                         
@@ -48,7 +48,8 @@ void E_ditar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char
                         gotoxy(59,a+j+1);cout << "|"; 
                         gotoxy(41,j+a);cout<<Apellidos[j];
 
-                        gotoxy(61,j+a);cout<<Dui[j];                                  
+                        gotoxy(61,j+a);cout<<Dui[j]; 
+                                                      
                    }
                    if(i == 0)   
                         {
