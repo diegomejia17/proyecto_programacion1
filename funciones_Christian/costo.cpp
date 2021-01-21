@@ -84,7 +84,7 @@ int costo(float consumo_mensual)
         }
         else if (tax > 43 && tax <= 44)
         {
-            taxAC = 2.29 + 40;
+            taxAC = 2.29 + 1.40;
         }
         else if (tax > 44 && tax <= 50)
         {
@@ -93,7 +93,7 @@ int costo(float consumo_mensual)
     }
     else if (tax > 50 && tax <= 100)
     {
-        taxAl = 7.50;
+        taxAl = 7.50 + 0.10;
         if (tax > 50 && tax >= 60)
         {
             taxAC = 2.29 + 1.90;
