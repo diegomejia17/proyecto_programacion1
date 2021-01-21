@@ -14,12 +14,9 @@ using namespace std;
 
 void editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char Numero_cuenta[N][10], char anio[N][11], int& i)
 {
-    
-
+    int posicion = 0;
     char name_aux[100],dui_aux[11] = {"\0"},Pcorrelativo[10]  = {"\0"},anio_aux[11]  = {"\0"};
     //variables auxiliares 
-    
-    int posicion;
     bool exito = false;
     char clear;
    
@@ -54,12 +51,13 @@ void editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char 
     exito =  false;
     int op;
     char menu[1];
+    
 
     do
     {
         interfaz(1, 27, 1, 80);
         interfaz(2, 26, 2, 79);
-        gotoxy(27,2);cout<<"\x1b[1;34mMODIFICAR REGISTRO DE USUARIO\033[0m"<<endl;
+        gotoxy(27,2);cout<<"\x1b[1;34mMODIFICAR REGISTRO DE USUARIO\033[0m"<<posicion<<endl;
         gotoxy(5,6);imprimir("Seleccione una opcion: ");
         gotoxy(5,8);imprimir("1.  cambiar nombres.");
         gotoxy(5,10);imprimir("2.  cambiar apellidos.");
@@ -104,7 +102,7 @@ void editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char 
                 limpiar();
                 interfaz(1, 27, 1, 80);
                 interfaz(2, 26, 2, 79);
-                gotoxy(27,2);cout<<"\x1b[1;34mMODIFICANDO APELLIDO DEL USUARIO\033[0m"<<endl;
+                gotoxy(27,2);cout<<"\x1b[1;34mMODIFICANDO APELLIDO DEL USUARIO \033[0m"<<posicion<<endl;
                  gotoxy(5,6);cout << "los apellidos anteriores son: \x1b[1;34m" << Apellidos[posicion] << endl;
                  gotoxy(5,8);cout << "\033[0mdigite el nuevo apellido:  \x1b[1;34m";
                 gotoxy(31,8);cin.getline(name_aux, 100, '\n');
@@ -139,12 +137,14 @@ void editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char 
                     }
                 fflush(stdin);
             } while (validarNumeros2(dui_aux) == 0 || validar_dui2(Dui, i, dui_aux) == false  || strlen(dui_aux) < 9 || strlen(dui_aux) > 9);
-            interfaz(14, 17, 49, 62);    
+            interfaz(14, 17, 49, 62); 
+            fflush(stdin);   
             strcpy(Dui[posicion],"\0");
             strncat(Dui[posicion],dui_aux,8);
             strcat(Dui[posicion],"-");
             strrev(dui_aux);
             strncat(Dui[posicion],dui_aux,1);
+            fflush(stdin);
 
             //strcpy( Dui[posicion],dui_aux); //copia a la matriz principal la modificacion del dui..
             gotoxy(20,16);imprimir("\033[32mDui sustituido con exito\033[0m");
@@ -156,8 +156,7 @@ void editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char 
             break;
         }
 
-    } while (isdigit(menu[0]) == 0 || op != 0);
-        
+    } while (isdigit(menu[0]) == 0 || op != 0); 
 
 
 }
