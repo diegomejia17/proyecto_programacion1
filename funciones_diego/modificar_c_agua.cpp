@@ -11,7 +11,9 @@ esta funcion sirve para modificar el registro del consumo del agua por si se lle
 */
 {
 	int mes_n = atoi(Mes[posicion]);
-	mes_n = mes_n - 1;
+	mes_n = mes_n - 2;
+
+	cout <<Mes[posicion]<<"aqui...";
 	bool exito = false; //variable para controar ciclos
 	float modificar;
 	float anterior;
