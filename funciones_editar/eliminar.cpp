@@ -90,11 +90,6 @@ void eliminar (char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], ch
       registro_user[a].registro_anual[2][0] = 2;
       registro_user[a].registro_anual[3][0] = 2;
       registro_user[a].registro_anual[4][0] = 2;
-      
-      /*registro_user[a].registro_anual[1][0] = registro_user[a+1].registro_anual[1][0];
-      registro_user[a].registro_anual[2][0] = registro_user[a+1].registro_anual[2][0];
-      registro_user[a].registro_anual[3][0] = registro_user[a+1].registro_anual[3][0];
-      registro_user[a].registro_anual[4][0] = registro_user[a+1].registro_anual[4][0];*/
     }
        
 }

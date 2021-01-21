@@ -96,8 +96,6 @@ void pago(char Numero_cuenta[N][10], register_anual *registro_user, int &i)
         }
 
     } while ((vuelto) < 0);
-    if((exito == false) && (c_usuario[0] != 48))
-        {
             gotoxy(20, 9 + s);
             cout << "Vuelto: $" << fixed << setprecision(2) << efectivo - total;
             system("pause>null");
@@ -108,7 +106,6 @@ void pago(char Numero_cuenta[N][10], register_anual *registro_user, int &i)
                     registro_user[posicion].registro_anual[4][j] = (1); // 1 = ya cancelo
                 }
             }
-        }
     
     return;
     system("cls");
