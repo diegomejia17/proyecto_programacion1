@@ -13,8 +13,22 @@ using namespace std;
 void consumo_agua(int &posicion, char c_usuario[10], register_anual *registro_user, char nombres[N][100], char Mes[N][11])
 /*en esta funcion se pide los datos para establecer el consumo al cliente que se ingreso*/
 {
+	char aux[20];
+
 	int mes_n = atoi(Mes[posicion]);
+	
+
+	itoa(mes_n +1 ,aux,10); 
+
+	strcpy(Mes[posicion],aux);
+
+	cout <<Mes[posicion]<<"aqui...";
+
 	mes_n = mes_n - 1;
+
+	
+	
+
 	bool exito = false;
 	char registro[20];
 	float Fregistro;
@@ -32,14 +46,15 @@ void consumo_agua(int &posicion, char c_usuario[10], register_anual *registro_us
 				registro_user[posicion].registro_anual[4][s] = 0;
 			}
 		}
-		if (registro_user[posicion].registro_anual[2][mes_n] == 0)
+		/*if (registro_user[posicion].registro_anual[2][mes_n] == 0)
 		//si aun no se a ingresado nada en la matriz de la estructura, entonces se pediran los datos
-		{
+		{*/
 			interfaz(1, 27, 1, 80);
 			interfaz(2, 26, 2, 79);
 			color(1);
 			gotoxy(27, 2);
 			cout << "INGRESO DE CONSUMO" << endl;
+			cout <<Mes[posicion]<<"aqui...";
 			color(0);
 			gotoxy(8, 4);
 			cout << "Usuario: " << c_usuario << endl;
@@ -112,14 +127,15 @@ void consumo_agua(int &posicion, char c_usuario[10], register_anual *registro_us
 						float consumo_mensual = Fregistro - anterior;
 						float precio = costo(consumo_mensual);
 						registro_user[posicion].registro_anual[3][mes_n] = (precio); //precio por mes
-						registro_user[posicion].registro_anual[4][mes_n] = (0);		 //no a pagado
+						registro_user[posicion].registro_anual[4][mes_n] = -1;		 //no a pagado
+						
 						exito = true;
 						color(1);
 						gotoxy(8, 12);
 						cout << "registro exitoso" << endl;
 						gotoxy(8, 14);
-						;
-						cout << "El consumo del mes es de: " << registro_user[posicion].registro_anual[2][mes_n] << endl;
+
+						cout << "El consumo del mes es de: " << registro_user[posicion].registro_anual[2][mes_n] << " " << registro_user[posicion].registro_anual[3][mes_n]<<"aquiii"<<endl;
 						color(0);
 						system("pause>0");
 						system("cls");
@@ -148,7 +164,7 @@ void consumo_agua(int &posicion, char c_usuario[10], register_anual *registro_us
 				system("pause>0");
 				system("cls");
 			}
-		}
+		/*}
 		else
 		{
 			exito = true;
@@ -158,7 +174,10 @@ void consumo_agua(int &posicion, char c_usuario[10], register_anual *registro_us
 			color(0);
 			system("pause>0");
 			system("cls");
-		}
+		}*/
 
 	} while (exito == false); //mientras no se cumpla ningun condicional el ciclo se repetira
+
+	
+
 }
