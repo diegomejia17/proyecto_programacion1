@@ -23,7 +23,6 @@ void case_4(register_anual * registro_user, char Nombres[N][100], char Apellidos
     interfaz(2, 26, 2, 79);
     gotoxy(30, 2);
     cout << "\x1b[1;34mINFORME DE PAGOS\033[0m" << endl;
-    interfaz(14, 17, 49, 62);
 
     if (anio[0][0] == 0)
     {
@@ -57,7 +56,6 @@ void case_4(register_anual * registro_user, char Nombres[N][100], char Apellidos
         interfaz(2, 26, 2, 79);
         gotoxy(30, 2);
         cout << "\x1b[1;34mINFORME DE PAGOS\033[0m" << endl;
-        interfaz(14, 17, 49, 62);
         gotoxy(36, 3);
         cout << meses[opc4 - 1] << endl;
 
