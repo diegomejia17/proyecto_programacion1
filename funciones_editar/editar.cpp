@@ -139,11 +139,13 @@ void editar(char Nombres[N][100], char Apellidos[N][100], char Dui[N][11], char 
             } while (validarNumeros2(dui_aux) == 0 || validar_dui2(Dui, i, dui_aux) == false  || strlen(dui_aux) < 9 || strlen(dui_aux) > 9);
             interfaz(14, 17, 49, 62); 
             fflush(stdin);   
+            /*
             strcpy(Dui[posicion],"\0");
             strncat(Dui[posicion],dui_aux,8);
             strcat(Dui[posicion],"-");
             strrev(dui_aux);
-            strncat(Dui[posicion],dui_aux,1);
+            strncat(Dui[posicion],dui_aux,1);*/
+            strcpy(Dui[posicion],dui_aux);
             fflush(stdin);
 
             //strcpy( Dui[posicion],dui_aux); //copia a la matriz principal la modificacion del dui..

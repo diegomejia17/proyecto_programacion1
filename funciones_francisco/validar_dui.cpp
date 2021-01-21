@@ -10,6 +10,8 @@ int validar_dui(char Dui[100][11], int& i)
     {
         int dui;
         dui = atoi(Dui[i]);
+
+        
         for(int j=0; j < i; j++)
             {
                 int aux = atoi(Dui[j]);
