@@ -54,7 +54,7 @@ void consumo_agua(int &posicion, char c_usuario[10], register_anual *registro_us
 			color(1);
 			gotoxy(27, 2);
 			cout << "INGRESO DE CONSUMO" << endl;
-			cout <<Mes[posicion]<<"aqui...";
+			
 			color(0);
 			gotoxy(8, 4);
 			cout << "Usuario: " << c_usuario << endl;
